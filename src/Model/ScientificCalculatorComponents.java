@@ -22,6 +22,9 @@ public class ScientificCalculatorComponents {
 		initialize();
 	}
 
+		/**
+	 * Initialize the contents of the frame.
+	 */
 	void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 501, 614);
