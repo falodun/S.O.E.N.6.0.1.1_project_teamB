@@ -79,19 +79,76 @@ public class CalculationForFunction4 implements ScientificCalculatorComponents.F
 	
 	double findRoot(double base, double power) {
 		
-		double temporary;
-		double root = base/2.0;
+		double resultOfRoot = 1;
 		
-		do {
-			
-			temporary = root;
-			root = (temporary + (base/temporary))/2.0 ;
-			
-		} while((temporary-root)!= 0);
+		if(power >= 1) {
+			double[] exponential = doExponentialWithPrecision(base, power);
+			resultOfRoot *= exponential[0];
+			power = exponential[1]; 
+		}
 		
-		return root;
+		if(power > 0 && power <1) { //fraction power remaining
+			
+			DecimalFormat df = new DecimalFormat("#.#####");  //formatting upto 5 decimal places
+			power = Double.parseDouble(df.format(power));
+			
+			double[] fraction = getFraction(power);
+			double denominator = root(base, fraction[1]); 
+			resultOfRoot *= doExponentialWithPrecision(denominator, fraction[0]*fraction[1])[0];
+		}
+		
+		return resultOfRoot;
+	}
+		
+	
+	public static double[] getFraction(double num) {
+		double numerator = num;
+		double denominator = 1;
+		while(!((numerator*denominator) % 1 == 0)) 
+		{
+			denominator++;
+		}
+		double[] parts = {numerator, denominator};
+		return parts;
+	}
+	
+	public static double root(double base, double denominator) { 
+		double precision = 1;
+		double closestRoot = findClosestRootWithPrecision(base, denominator, 0, precision); 
+		while(base < doExponentialWithPrecision(closestRoot, denominator)[0] && precision > 0.0000000000001) {
+			closestRoot -= precision;
+			precision *= 0.1;
+			closestRoot = findClosestRootWithPrecision(base, denominator, closestRoot, precision);
+		}
+
+		return closestRoot;
+	}
+	
+	public static double findClosestRootWithPrecision(double base, double power, double closestRoot, double precision) {
+		closestRoot +=precision;
+		double[] temp = doExponentialWithPrecision(closestRoot, power);
+		while(temp[0] < base) {
+			closestRoot += precision;
+			temp = doExponentialWithPrecision(closestRoot, power);
+		}
+		return closestRoot;
+	}
+	
+	public static double[] doExponentialWithPrecision(double base, double power) {
+		double result = 1;
+		
+		while(power > 0) {
+			result *= base;
+			power--;
+			if(power < 1) {
+				break;
+			}
+		}
+		double[] parts = {result , power};
+		return parts;
 	}
 
 
 	
 }
+
