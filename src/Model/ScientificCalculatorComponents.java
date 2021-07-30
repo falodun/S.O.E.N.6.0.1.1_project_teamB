@@ -12,6 +12,12 @@ import javax.swing.SwingConstants;
 
 public class ScientificCalculatorComponents {
 	
+	public FunctionHandler functionHandler;
+	public interface FunctionHandler { 
+		void updateData(JFrame frame);
+		String findResult(JFrame frame);
+	}
+	
 	public JFrame frame;
 	private JTextField textFieldResult;
 	
@@ -325,40 +331,60 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button Equal**************
-		JButton btnEqual = new JButton("=");
+		final JButton btnEqual = new JButton("=");
 		btnEqual.setEnabled(false);
 		btnEqual.setFont(new Font("Tahoma", Font.BOLD, 23));
-		btnEqual.setBounds(359, 438, 100, 62);
+		//btnEqual.setBounds(359, 438, 100, 62);
+		btnEqual.setBounds(335, 438, 124, 62);
 		frame.getContentPane().add(btnEqual);
+		
+		btnEqual.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				if(functionHandler instanceof CalculationForFunction4) {
+					textFieldResult.setText(functionHandler.findResult(frame));
+				}else {
+					
+				}
+				
+			}
+		});
 		
 		
 		//********Button Function1**********
-		JButton btnFunction1 = new JButton("F1");
+		JButton btnFunction1 = new JButton("tan(x)");
 		btnFunction1.setEnabled(false);
 		btnFunction1.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction1.setBounds(359, 146, 100, 62);
+		btnFunction1.setBounds(335, 146, 124, 62);
 		frame.getContentPane().add(btnFunction1);
 		
 		//********Button Function2**********
-		JButton btnFunction2 = new JButton("F2");
+		JButton btnFunction2 = new JButton("sinh(x)");
 		btnFunction2.setEnabled(false);
 		btnFunction2.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction2.setBounds(359, 219, 100, 62);
+		btnFunction1.setBounds(335, 219, 124, 62);
 		frame.getContentPane().add(btnFunction2);
 		
 		//********Button Function3**********
-		JButton btnFunction3 = new JButton("F3");
+		JButton btnFunction3 = new JButton("ab^x");
 		btnFunction3.setEnabled(false);
 		btnFunction3.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction3.setBounds(359, 289, 100, 62);
+		btnFunction3.setBounds(335, 289, 124, 62);
 		frame.getContentPane().add(btnFunction3);
 		
 		//********Button Function4**********
 		JButton btnFunction4 = new JButton("x^y");
 		btnFunction4.setEnabled(false);
 		btnFunction4.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction4.setBounds(359, 362, 100, 62);
+		btnFunction4.setBounds(335, 362, 124, 62);
 		frame.getContentPane().add(btnFunction4);
+		
+		btnFunction4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				functionHandler =  new CalculationForFunction4();
+				functionHandler.updateData(frame);	
+			}
+		});
 		
 		
 		//********Button ON/OFF************
