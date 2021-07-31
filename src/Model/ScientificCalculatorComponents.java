@@ -10,6 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Model.ScientificCalculatorComponents;
+import Controller.CalculationForFunction3;
+//import View.ScientificCalculator.FunctionHandler;
+import Controller.CalculationForFunction4;
+
+
+
 public class ScientificCalculatorComponents {
 	
 	public FunctionHandler functionHandler;
@@ -28,12 +35,12 @@ public class ScientificCalculatorComponents {
 		initialize();
 	}
 
-		/**
+	/**
 	 * Initialize the contents of the frame.
 	 */
 	void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 501, 614);
+		frame.setBounds(100, 100, 504, 632);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -53,13 +60,13 @@ public class ScientificCalculatorComponents {
 		textFieldResult.setEditable(false);
 		
 		//********Button 1**********
-		JButton btnOne = new JButton("1");
+		final JButton btnOne = new JButton("1");
 		btnOne.setEnabled(false);
 		btnOne.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR") || input.contains("enter")) {
 					input = "";
 				}
 				
@@ -72,13 +79,13 @@ public class ScientificCalculatorComponents {
 		frame.getContentPane().add(btnOne);
 		
 		//********Button 2******************
-		JButton btnTwo = new JButton("2");
+		final JButton btnTwo = new JButton("2");
 		btnTwo.setEnabled(false);
 		btnTwo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -92,13 +99,13 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 3******************
-		JButton btnThree = new JButton("3");
+		final JButton btnThree = new JButton("3");
 		btnThree.setEnabled(false);
 		btnThree.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -112,12 +119,12 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 4******************
-		JButton btnFour = new JButton("4");
+		final JButton btnFour = new JButton("4");
 		btnFour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -132,13 +139,13 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 5******************
-		JButton btnFive = new JButton("5");
+		final JButton btnFive = new JButton("5");
 		btnFive.setEnabled(false);
 		btnFive.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -152,12 +159,12 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 6******************
-		JButton btnSix = new JButton("6");
+		final JButton btnSix = new JButton("6");
 		btnSix.setEnabled(false);
 		btnSix.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -171,13 +178,13 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 7******************
-		JButton btnSeven = new JButton("7");
+		final JButton btnSeven = new JButton("7");
 		btnSeven.setEnabled(false);
 		btnSeven.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -190,13 +197,13 @@ public class ScientificCalculatorComponents {
 		frame.getContentPane().add(btnSeven);
 		
 		//********Button 8******************
-		JButton btnEight = new JButton("8");
+		final JButton btnEight = new JButton("8");
 		btnEight.setEnabled(false);
 		btnEight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 				
@@ -210,12 +217,12 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 9******************
-		JButton btnNine = new JButton("9");
+		final JButton btnNine = new JButton("9");
 		btnNine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 					
@@ -230,14 +237,14 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button 0******************
-		JButton btnZero = new JButton("0");
+		final JButton btnZero = new JButton("0");
 		btnZero.setEnabled(false);
 		btnZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
 				
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 				
@@ -251,7 +258,7 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button Clear**************
-		JButton btnClear = new JButton("C");
+		final JButton btnClear = new JButton("C");
 		btnClear.setEnabled(false);
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -264,7 +271,7 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button BackSpace**********
-		JButton btnBackSpace = new JButton("\uF0E7");
+		final JButton btnBackSpace = new JButton("\uF0E7");
 		btnBackSpace.setEnabled(false);
 		btnBackSpace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -273,7 +280,7 @@ public class ScientificCalculatorComponents {
 				
 				if(input.length() > 0) {
 					
-					if(input.contains("ERROR")) {
+					if(input.contains("ERROR")|| input.contains("enter")) {
 						input = "";
 						textFieldResult.setText(input);
 						
@@ -290,14 +297,50 @@ public class ScientificCalculatorComponents {
 		frame.getContentPane().add(btnBackSpace);
 		
 		
+		//********Button Multiply*******************
+		final JButton btnMultiply = new JButton("*");
+		btnMultiply.setFont(new Font("Tahoma", Font.BOLD, 23));
+		btnMultiply.setEnabled(false);
+		btnMultiply.setBounds(20, 511, 80, 62);
+		frame.getContentPane().add(btnMultiply);
+		
+		
+		//*******Button Comma***************
+		final JButton btnComma = new JButton(",");
+		btnComma.setFont(new Font("Tahoma", Font.BOLD, 23));
+		btnComma.setEnabled(false);
+		btnComma.setBounds(110, 511, 80, 62);
+		frame.getContentPane().add(btnComma);
+		
+		btnComma.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				String input = textFieldResult.getText();
+				if(input.contains("ERROR")) {
+					input = "";
+				}
+				
+				input += btnComma.getText();
+				textFieldResult.setText(input);
+			
+			}
+		});
+		
+		//********Button Blank**************
+		final JButton btnBlank = new JButton("");
+		btnBlank.setFont(new Font("Tahoma", Font.BOLD, 23));
+		btnBlank.setEnabled(false);
+		btnBlank.setBounds(200, 511, 80, 62);
+		frame.getContentPane().add(btnBlank);
+		
 		//********Button Dot****************
-		JButton btnDot = new JButton(".");
+		final JButton btnDot = new JButton(".");
 		btnDot.setEnabled(false);
 		btnDot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
+				if(input.contains("ERROR")|| input.contains("enter")) {
 					input = "";
 				}
 				
@@ -311,23 +354,89 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button Negative***********
-		JButton btnNegative = new JButton("-");
+		final JButton btnNegative = new JButton("-");
 		btnNegative.setEnabled(false);
 		btnNegative.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.isEmpty()) {
-					textFieldResult.setText(btnNegative.getText());
+				if(input.contains("enter")) {
+					input = btnNegative.getText();
+					textFieldResult.setText(input);
+					
+				}else if(input.isEmpty() || input.contains(",")) {
+					
+					input += btnNegative.getText();
+					textFieldResult.setText(input);
 				}else {
 					
 					textFieldResult.setText("ERROR"); //Cannot put MINUS in between digits!
 				}
 			}
 		});
+		
 		btnNegative.setFont(new Font("Tahoma", Font.BOLD, 23));
 		btnNegative.setBounds(20, 438, 80, 62);
 		frame.getContentPane().add(btnNegative);
+		
+
+		
+		
+		//********Button Function1**********
+		final JButton btnFunction1 = new JButton("tan(x)");
+		btnFunction1.setEnabled(false);
+		btnFunction1.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction1.setBounds(359, 146, 100, 62);
+		btnFunction1.setBounds(335, 146, 124, 62);
+		frame.getContentPane().add(btnFunction1);
+		
+		//********Button Function2**********
+		final JButton btnFunction2 = new JButton("sinh(x)");
+		btnFunction2.setEnabled(false);
+		btnFunction2.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction2.setBounds(359, 219, 100, 62);
+		btnFunction2.setBounds(335, 219, 124, 62);
+		frame.getContentPane().add(btnFunction2);
+		
+		//********Button Function3**********
+		final JButton btnFunction3 = new JButton("ab^x");
+		btnFunction3.setEnabled(false);
+		btnFunction3.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction3.setBounds(359, 289, 100, 62);
+		btnFunction3.setBounds(335, 289, 124, 62);
+		frame.getContentPane().add(btnFunction3);
+		
+		btnFunction3.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				functionHandler =  new CalculationForFunction3();
+				functionHandler.updateData(frame);
+				
+			}
+		});
+		
+		//********Button Function4**********
+		final JButton btnFunction4 = new JButton("x^y");
+		btnFunction4.setEnabled(false);
+		btnFunction4.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction4.setBounds(359, 362, 100, 62);
+		btnFunction4.setBounds(335, 362, 124, 62);
+		frame.getContentPane().add(btnFunction4);
+		
+		
+		btnFunction4.addActionListener(new ActionListener() {
+			
+		
+			public void actionPerformed(ActionEvent e) {
+				
+				functionHandler =  new CalculationForFunction4();
+				functionHandler.updateData(frame);
+				
+			}
+		});
+		
 		
 		
 		//********Button Equal**************
@@ -335,7 +444,7 @@ public class ScientificCalculatorComponents {
 		btnEqual.setEnabled(false);
 		btnEqual.setFont(new Font("Tahoma", Font.BOLD, 23));
 		//btnEqual.setBounds(359, 438, 100, 62);
-		btnEqual.setBounds(335, 438, 124, 62);
+		btnEqual.setBounds(335, 438, 124, 135);
 		frame.getContentPane().add(btnEqual);
 		
 		btnEqual.addActionListener(new ActionListener() {
@@ -343,52 +452,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				if(functionHandler instanceof CalculationForFunction4) {
 					textFieldResult.setText(functionHandler.findResult(frame));
-				}else {
 					
+				}else if(functionHandler instanceof CalculationForFunction3){
+					functionHandler.updateData(frame);
+					textFieldResult.setText(functionHandler.findResult(frame));
 				}
 				
 			}
 		});
 		
 		
-		//********Button Function1**********
-		JButton btnFunction1 = new JButton("tan(x)");
-		btnFunction1.setEnabled(false);
-		btnFunction1.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction1.setBounds(335, 146, 124, 62);
-		frame.getContentPane().add(btnFunction1);
-		
-		//********Button Function2**********
-		JButton btnFunction2 = new JButton("sinh(x)");
-		btnFunction2.setEnabled(false);
-		btnFunction2.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction1.setBounds(335, 219, 124, 62);
-		frame.getContentPane().add(btnFunction2);
-		
-		//********Button Function3**********
-		JButton btnFunction3 = new JButton("ab^x");
-		btnFunction3.setEnabled(false);
-		btnFunction3.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction3.setBounds(335, 289, 124, 62);
-		frame.getContentPane().add(btnFunction3);
-		
-		//********Button Function4**********
-		JButton btnFunction4 = new JButton("x^y");
-		btnFunction4.setEnabled(false);
-		btnFunction4.setFont(new Font("Tahoma", Font.BOLD, 21));
-		btnFunction4.setBounds(335, 362, 124, 62);
-		frame.getContentPane().add(btnFunction4);
-		
-		btnFunction4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				functionHandler =  new CalculationForFunction4();
-				functionHandler.updateData(frame);	
-			}
-		});
+
 		
 		
 		//********Button ON/OFF************
-		JButton btnOn = new JButton("ON");
+		final JButton btnOn = new JButton("ON");
 		btnOn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -419,6 +497,9 @@ public class ScientificCalculatorComponents {
 					btnNegative.setEnabled(true);
 					btnBackSpace.setEnabled(true);
 					
+					btnComma.setEnabled(true);
+					btnMultiply.setEnabled(true);
+					
 					btnEqual.setEnabled(true);
 					
 				}else { //case when we switch the Calculator OFF
@@ -448,6 +529,9 @@ public class ScientificCalculatorComponents {
 					btnClear.setEnabled(false);
 					btnNegative.setEnabled(false);
 					btnBackSpace.setEnabled(false);
+					
+					btnComma.setEnabled(false);
+					btnComma.setEnabled(false);
 					
 					btnEqual.setEnabled(false);
 					
