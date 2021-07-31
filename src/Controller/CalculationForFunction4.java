@@ -1,5 +1,7 @@
 package Controller;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -44,7 +46,11 @@ public class CalculationForFunction4 implements ScientificCalculatorComponents.F
 			displayedValue.setText("ERROR");
 		}
 		
-		if(powerValue % 1 == 0 && powerValue > 0) { //for positive integer powers
+		if(baseValue < 0 && powerValue % 1 != 0) { //for negative numbers, power cannot be fractions
+			result = "Error";
+		}else {
+			
+			if(powerValue % 1 == 0 && powerValue > 0) { //for positive integer powers
 			for(int i = 1; i <= powerValue; i++) {
 				result = ""+(Double.parseDouble(result)*baseValue);
 			}
@@ -71,9 +77,8 @@ public class CalculationForFunction4 implements ScientificCalculatorComponents.F
 			}
 			
 		}
-		
+		}
 
-		
 		return result;
 	}
 	
@@ -151,4 +156,5 @@ public class CalculationForFunction4 implements ScientificCalculatorComponents.F
 
 	
 }
+
 
