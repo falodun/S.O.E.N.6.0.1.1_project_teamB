@@ -156,5 +156,3 @@ public class CalculationForFunction4 implements ScientificCalculatorComponents.F
 
 	
 }
-
-

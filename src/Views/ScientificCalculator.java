@@ -1,18 +1,9 @@
-package View;
+package Views;
+
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-
 import Model.ScientificCalculatorComponents;
-
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import Model.ScientificCalculatorComponents.FunctionHandler;
 
 public class ScientificCalculator {
 
@@ -21,6 +12,7 @@ public class ScientificCalculator {
 
 	/**
 	 * Launch the application.
+	 * 
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -36,6 +28,9 @@ public class ScientificCalculator {
 	}
 
 	
+	/**
+	 * 
+	 */
 	public ScientificCalculator() {
 		
 	}
