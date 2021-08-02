@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 import Model.ScientificCalculatorComponents;
 import Model.ScientificCalculatorComponents.FunctionHandler;
 
-public class CalculationForFunction3 implements FunctionHandler{
+public class CalculationForFunction5 implements FunctionHandler{
 
 	ScientificCalculatorComponents.FunctionHandler functionalHandler = this;
 	JFrame frame;

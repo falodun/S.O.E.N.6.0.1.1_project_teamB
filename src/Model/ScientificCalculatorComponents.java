@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import Model.ScientificCalculatorComponents;
-import Controller.CalculationForFunction3;
+import Controller.CalculationForFunction5;
 //import View.ScientificCalculator.FunctionHandler;
 import Controller.CalculationForFunction4;
 
@@ -411,7 +411,7 @@ public class ScientificCalculatorComponents {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				functionHandler =  new CalculationForFunction3();
+				functionHandler =  new CalculationForFunction5();
 				functionHandler.updateData(frame);
 				
 			}
@@ -453,7 +453,7 @@ public class ScientificCalculatorComponents {
 				if(functionHandler instanceof CalculationForFunction4) {
 					textFieldResult.setText(functionHandler.findResult(frame));
 					
-				}else if(functionHandler instanceof CalculationForFunction3){
+				}else if(functionHandler instanceof CalculationForFunction5){
 					functionHandler.updateData(frame);
 					textFieldResult.setText(functionHandler.findResult(frame));
 				}
