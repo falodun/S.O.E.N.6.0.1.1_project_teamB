@@ -3,6 +3,10 @@ package Model;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +17,7 @@ import javax.swing.SwingConstants;
 import Model.ScientificCalculatorComponents;
 import Controller.CalculationForFunction5;
 //import View.ScientificCalculator.FunctionHandler;
-import Controller.CalculationForFunction4;
+import Controller.CalculationForFunction7;
 
 
 
@@ -28,6 +32,8 @@ public class ScientificCalculatorComponents {
 	public JFrame frame;
 	private JTextField textFieldResult;
 	
+	private static final List<String> numbers = Collections.unmodifiableList(Arrays.asList("0","1","2","3","4","5","6","7","8","9"));
+		
 	/**
 	 * Create the application.
 	 */
@@ -40,7 +46,7 @@ public class ScientificCalculatorComponents {
 	 */
 	void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 504, 632);
+		frame.setBounds(100, 100, 583, 632);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -54,7 +60,7 @@ public class ScientificCalculatorComponents {
 		textFieldResult = new JTextField();
 		textFieldResult.setHorizontalAlignment(SwingConstants.RIGHT);
 		textFieldResult.setFont(new Font("Tahoma", Font.BOLD, 21));
-		textFieldResult.setBounds(10, 43, 467, 82);
+		textFieldResult.setBounds(10, 43, 531, 82);
 		frame.getContentPane().add(textFieldResult);
 		textFieldResult.setColumns(10);
 		textFieldResult.setEditable(false);
@@ -66,11 +72,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR") || input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
+					input = btnOne.getText();
+					
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnOne.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnOne.getText();
+					
 				}
 				
-				input += btnOne.getText();
 				textFieldResult.setText(input);
 			}
 		});
@@ -85,11 +101,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnTwo.getText();
 					
-				input += btnTwo.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnTwo.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnTwo.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -105,11 +131,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnThree.getText();
 					
-				input += btnThree.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnThree.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnThree.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -124,11 +160,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnFour.getText();
 					
-				input += btnFour.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnFour.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnFour.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -145,11 +191,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnFive.getText();
 					
-				input += btnFive.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnFive.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnFive.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -164,11 +220,21 @@ public class ScientificCalculatorComponents {
 		btnSix.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnSix.getText();
 					
-				input += btnSix.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnSix.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnSix.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -184,11 +250,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnSeven.getText();
 					
-				input += btnSeven.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnSeven.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnSeven.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -203,11 +279,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
+					input = btnEight.getText();
+					
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnEight.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnEight.getText();
+					
 				}
 				
-				input += btnEight.getText();
 				textFieldResult.setText(input);
 			}
 		});
@@ -222,11 +308,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
-				}
+					input = btnNine.getText();
 					
-				input += btnNine.getText();
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnNine.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnNine.getText();
+					
+				}
+				
 				textFieldResult.setText(input);
 			}
 		});
@@ -243,12 +339,21 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("Enter the value of")) {
 					input = "";
+					input = btnZero.getText();
+					
+				}else if(input.contains(String.valueOf(numbers))) {
+					input += btnZero.getText();
+					
+				}else if(input.contains("ERROR") || input.contains("Please select")) {
+					input = "Please select one of the functions first!";
+					
+				}else {
+					input += btnZero.getText();
+					
 				}
 				
-				input += btnZero.getText();
 				textFieldResult.setText(input);
 			}
 		});
@@ -295,43 +400,8 @@ public class ScientificCalculatorComponents {
 		btnBackSpace.setFont(new Font("wingdings", Font.BOLD, 21));
 		btnBackSpace.setBounds(200, 146, 80, 62);
 		frame.getContentPane().add(btnBackSpace);
-		
-		
-		//********Button Multiply*******************
-		final JButton btnMultiply = new JButton("*");
-		btnMultiply.setFont(new Font("Tahoma", Font.BOLD, 23));
-		btnMultiply.setEnabled(false);
-		btnMultiply.setBounds(20, 511, 80, 62);
-		frame.getContentPane().add(btnMultiply);
-		
-		
-		//*******Button Comma***************
-		final JButton btnComma = new JButton(",");
-		btnComma.setFont(new Font("Tahoma", Font.BOLD, 23));
-		btnComma.setEnabled(false);
-		btnComma.setBounds(110, 511, 80, 62);
-		frame.getContentPane().add(btnComma);
-		
-		btnComma.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				String input = textFieldResult.getText();
-				if(input.contains("ERROR")) {
-					input = "";
-				}
 				
-				input += btnComma.getText();
-				textFieldResult.setText(input);
-			
-			}
-		});
-		
-		//********Button Blank**************
-		final JButton btnBlank = new JButton("");
-		btnBlank.setFont(new Font("Tahoma", Font.BOLD, 23));
-		btnBlank.setEnabled(false);
-		btnBlank.setBounds(200, 511, 80, 62);
-		frame.getContentPane().add(btnBlank);
+
 		
 		//********Button Dot****************
 		final JButton btnDot = new JButton(".");
@@ -340,7 +410,7 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("ERROR")|| input.contains("enter")) {
+				if(input.contains("ERROR")|| input.contains("Enter")) {
 					input = "";
 				}
 				
@@ -360,11 +430,11 @@ public class ScientificCalculatorComponents {
 			public void actionPerformed(ActionEvent e) {
 				
 				String input = textFieldResult.getText();
-				if(input.contains("enter")) {
+				if(input.contains("Enter")) {
 					input = btnNegative.getText();
 					textFieldResult.setText(input);
 					
-				}else if(input.isEmpty() || input.contains(",")) {
+				}else if(input.isEmpty()) {
 					
 					input += btnNegative.getText();
 					textFieldResult.setText(input);
@@ -383,30 +453,30 @@ public class ScientificCalculatorComponents {
 		
 		
 		//********Button Function1**********
-		final JButton btnFunction1 = new JButton("tan(x)");
+		final JButton btnFunction1 = new JButton("F1: arccos(x)");
 		btnFunction1.setEnabled(false);
 		btnFunction1.setFont(new Font("Tahoma", Font.BOLD, 21));
-		//btnFunction1.setBounds(359, 146, 100, 62);
-		btnFunction1.setBounds(335, 146, 124, 62);
+		//btnFunction1.setBounds(335, 146, 206, 62);
+		btnFunction1.setBounds(335, 146, 206, 62);
 		frame.getContentPane().add(btnFunction1);
 		
-		//********Button Function2**********
-		final JButton btnFunction2 = new JButton("sinh(x)");
-		btnFunction2.setEnabled(false);
-		btnFunction2.setFont(new Font("Tahoma", Font.BOLD, 21));
-		//btnFunction2.setBounds(359, 219, 100, 62);
-		btnFunction2.setBounds(335, 219, 124, 62);
-		frame.getContentPane().add(btnFunction2);
-		
 		//********Button Function3**********
-		final JButton btnFunction3 = new JButton("ab^x");
+		final JButton btnFunction3 = new JButton("F3: sinh(x)");
 		btnFunction3.setEnabled(false);
 		btnFunction3.setFont(new Font("Tahoma", Font.BOLD, 21));
-		//btnFunction3.setBounds(359, 289, 100, 62);
-		btnFunction3.setBounds(335, 289, 124, 62);
+		//btnFunction2.setBounds(335, 219, 206, 62);
+		btnFunction3.setBounds(335, 219, 206, 62);
 		frame.getContentPane().add(btnFunction3);
 		
-		btnFunction3.addActionListener(new ActionListener() {
+		//********Button Function5**********
+		final JButton btnFunction5 = new JButton("F5: ab^x");
+		btnFunction5.setEnabled(false);
+		btnFunction5.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction3.setBounds(335, 289, 206, 62);
+		btnFunction5.setBounds(335, 289, 206, 62);
+		frame.getContentPane().add(btnFunction5);
+		
+		btnFunction5.addActionListener(new ActionListener() {
 			
 			
 			public void actionPerformed(ActionEvent e) {
@@ -417,22 +487,52 @@ public class ScientificCalculatorComponents {
 			}
 		});
 		
-		//********Button Function4**********
-		final JButton btnFunction4 = new JButton("x^y");
-		btnFunction4.setEnabled(false);
-		btnFunction4.setFont(new Font("Tahoma", Font.BOLD, 21));
-		//btnFunction4.setBounds(359, 362, 100, 62);
-		btnFunction4.setBounds(335, 362, 124, 62);
-		frame.getContentPane().add(btnFunction4);
+		//********Button Function7**********
+		final JButton btnFunction7 = new JButton("F7: x^y");
+		btnFunction7.setEnabled(false);
+		btnFunction7.setFont(new Font("Tahoma", Font.BOLD, 21));
+		//btnFunction4.setBounds(335, 362, 206, 62);
+		btnFunction7.setBounds(335, 362, 206, 62);
+		frame.getContentPane().add(btnFunction7);
 		
 		
-		btnFunction4.addActionListener(new ActionListener() {
+		btnFunction7.addActionListener(new ActionListener() {
 			
 		
 			public void actionPerformed(ActionEvent e) {
 				
-				functionHandler =  new CalculationForFunction4();
-				functionHandler.updateData(frame);
+				String input = textFieldResult.getText();
+				
+				if(input.contains("Please select one of the functions")) {
+					textFieldResult.setText("Enter the value of x");
+					functionHandler =  new CalculationForFunction7();
+					
+				}else if(input.isEmpty()) {
+					textFieldResult.setText("Enter the value of x");
+				}else {
+					textFieldResult.setText("");
+				}
+				
+				
+//				functionHandler =  new CalculationForFunction4();
+//				functionHandler.updateData(frame);
+				
+			}
+		});
+		
+		
+		//********Button Ok**************
+		final JButton btnOk = new JButton("OK");
+		btnOk.setFont(new Font("Tahoma", Font.BOLD, 23));
+		btnOk.setEnabled(false);
+		btnOk.setBounds(110, 511, 80, 62);
+		frame.getContentPane().add(btnOk);
+		btnOk.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				if(functionHandler instanceof CalculationForFunction7) {
+					functionHandler.updateData(frame);
+				}
 				
 			}
 		});
@@ -444,13 +544,13 @@ public class ScientificCalculatorComponents {
 		btnEqual.setEnabled(false);
 		btnEqual.setFont(new Font("Tahoma", Font.BOLD, 23));
 		//btnEqual.setBounds(359, 438, 100, 62);
-		btnEqual.setBounds(335, 438, 124, 135);
+		btnEqual.setBounds(335, 438, 206, 62);
 		frame.getContentPane().add(btnEqual);
 		
 		btnEqual.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				if(functionHandler instanceof CalculationForFunction4) {
+				if(functionHandler instanceof CalculationForFunction7) {
 					textFieldResult.setText(functionHandler.findResult(frame));
 					
 				}else if(functionHandler instanceof CalculationForFunction5){
@@ -475,6 +575,7 @@ public class ScientificCalculatorComponents {
 					btnOn.setText("OFF");
 					
 					textFieldResult.setEditable(true);
+					textFieldResult.setText("Please select one of the functions");
 					
 					btnOne.setEnabled(true);
 					btnTwo.setEnabled(true);
@@ -488,17 +589,17 @@ public class ScientificCalculatorComponents {
 					btnZero.setEnabled(true);
 					
 					btnFunction1.setEnabled(true);
-					btnFunction2.setEnabled(true);
 					btnFunction3.setEnabled(true);
-					btnFunction4.setEnabled(true);
+					btnFunction5.setEnabled(true);
+					btnFunction7.setEnabled(true);
 					
 					btnDot.setEnabled(true);
 					btnClear.setEnabled(true);
 					btnNegative.setEnabled(true);
 					btnBackSpace.setEnabled(true);
 					
-					btnComma.setEnabled(true);
-					btnMultiply.setEnabled(true);
+					btnOk.setEnabled(true);
+					
 					
 					btnEqual.setEnabled(true);
 					
@@ -521,17 +622,16 @@ public class ScientificCalculatorComponents {
 					btnZero.setEnabled(false);
 					
 					btnFunction1.setEnabled(false);
-					btnFunction2.setEnabled(false);
 					btnFunction3.setEnabled(false);
-					btnFunction4.setEnabled(false);
+					btnFunction5.setEnabled(false);
+					btnFunction7.setEnabled(false);
 					
 					btnDot.setEnabled(false);
 					btnClear.setEnabled(false);
 					btnNegative.setEnabled(false);
 					btnBackSpace.setEnabled(false);
 					
-					btnComma.setEnabled(false);
-					btnComma.setEnabled(false);
+					btnOk.setEnabled(false);
 					
 					btnEqual.setEnabled(false);
 					
@@ -544,4 +644,3 @@ public class ScientificCalculatorComponents {
 		frame.getContentPane().add(btnOn);
 	}
 }
-
