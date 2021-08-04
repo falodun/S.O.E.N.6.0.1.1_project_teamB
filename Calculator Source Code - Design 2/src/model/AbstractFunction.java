@@ -1,12 +1,11 @@
-package functions;
-import utils.HomeMenu;
-import javax.swing.JOptionPane;
+package model;
+import view.HomeMenu;
 
 public abstract class AbstractFunction {
 
-    public final void run() {
+    public final void runFunction() {
         getInputsAndDisplayResult();
-        new HomeMenu().run();
+        new HomeMenu().showHomeMenu();
     }
 
     public abstract void getInputsAndDisplayResult();
