@@ -4,22 +4,25 @@ import view.FunctionResultView;
 
 public class F2 extends AbstractFunction {
     public String functionName = "tan(x)";
+    String selectedFunctionMessage = "SELECTED FUNCTION: " + functionName + "\n\n";
     double x = 0;
+    double result = 0;
 
     @Override
-    public void getInputsAndDisplayResult() {
-        String selectedFunctionMessage = "SELECTED FUNCTION: " + functionName + "\n\n";
+    public void getInputs() {
         x = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "x");
-        String input =
-                "INPUT:" +
+    }
+
+    @Override
+    public void displayResult() {
+        String input = "INPUT:" +
                 "\nx = " + x + "\n\n";
-        double result = calculateResult();
         new FunctionResultView().showResult(selectedFunctionMessage, input, "" + result);
     }
 
     @Override
-    public double calculateResult() {
-        return x*2; //todo: replace with real result after function's implementation
+    public void calculateResult() {
+        result = x*2; //todo: replace with real result after function's implementation
     }
 
 }

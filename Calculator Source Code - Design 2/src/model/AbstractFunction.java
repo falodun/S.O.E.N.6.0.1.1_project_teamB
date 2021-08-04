@@ -4,12 +4,16 @@ import view.HomeMenu;
 public abstract class AbstractFunction {
 
     public final void runFunction() {
-        getInputsAndDisplayResult();
+        getInputs();
+        calculateResult();
+        displayResult();
         new HomeMenu().showHomeMenu();
     }
 
-    public abstract void getInputsAndDisplayResult();
+    public abstract void getInputs();
 
-    public abstract double calculateResult();
+    public abstract void calculateResult();
+
+    public abstract void displayResult();
 
 }
