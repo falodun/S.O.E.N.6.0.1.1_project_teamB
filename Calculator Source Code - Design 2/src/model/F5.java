@@ -2,7 +2,7 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 
-public class F5 extends AbstractFunction implements IFunction {
+public class F5 extends AbstractFunction {
     public String functionName = "ab^x";
     double a = 0;
     double b = 0;

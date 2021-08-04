@@ -2,7 +2,7 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 
-public class F3 extends AbstractFunction implements IFunction {
+public class F3 extends AbstractFunction {
     public String functionName = "sinh(x)";
     double x = 0;
 

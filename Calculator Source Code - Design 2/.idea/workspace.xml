@@ -3,20 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d0083b61-4399-4ffa-8ae7-293330dace66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/functions/AbstractFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/functions/F2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/functions/F3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/functions/F5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/functions/F7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/calculator/utils/HomeMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/AbstractFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/AbstractFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/F2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/F3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/F5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/F7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/AbstractFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/model/AbstractFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/F2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/model/F2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/F3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/model/F3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/F5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/model/F5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/F7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator/model/F7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator/model/IFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AbstractFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/AbstractFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/F2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/F3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/F5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/F7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IFunction.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <updated>1627882976153</updated>
       <workItem from="1627882980577" duration="26814000" />
       <workItem from="1628021485809" duration="11038000" />
-      <workItem from="1628072908458" duration="12127000" />
+      <workItem from="1628072908458" duration="12753000" />
     </task>
     <servers />
   </component>
@@ -95,21 +93,21 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="422" y="116" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1627936903960" />
-    <state width="1237" height="34" key="GridCell.Tab.0.bottom" timestamp="1628087518248">
+    <state width="1237" height="34" key="GridCell.Tab.0.bottom" timestamp="1628088346626">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="34" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1628087518248" />
-    <state width="1237" height="34" key="GridCell.Tab.0.center" timestamp="1628087518247">
+    <state width="1237" height="34" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1628088346626" />
+    <state width="1237" height="34" key="GridCell.Tab.0.center" timestamp="1628088346626">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="34" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1628087518247" />
-    <state width="1237" height="34" key="GridCell.Tab.0.left" timestamp="1628087518247">
+    <state width="1237" height="34" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1628088346626" />
+    <state width="1237" height="34" key="GridCell.Tab.0.left" timestamp="1628088346626">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="34" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1628087518247" />
-    <state width="1237" height="34" key="GridCell.Tab.0.right" timestamp="1628087518248">
+    <state width="1237" height="34" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1628088346626" />
+    <state width="1237" height="34" key="GridCell.Tab.0.right" timestamp="1628088346626">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="34" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1628087518248" />
+    <state width="1237" height="34" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1628088346626" />
   </component>
 </project>

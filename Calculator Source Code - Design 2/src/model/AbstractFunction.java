@@ -10,4 +10,6 @@ public abstract class AbstractFunction {
 
     public abstract void getInputsAndDisplayResult();
 
+    public abstract double calculateResult();
+
 }

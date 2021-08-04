@@ -2,7 +2,7 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 
-public class F7 extends AbstractFunction implements IFunction {
+public class F7 extends AbstractFunction {
     public String functionName = "x^y";
     double x = 0;
     double y = 0;

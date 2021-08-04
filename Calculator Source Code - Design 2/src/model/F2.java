@@ -2,7 +2,7 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 
-public class F2 extends AbstractFunction implements IFunction {
+public class F2 extends AbstractFunction {
     public String functionName = "tan(x)";
     double x = 0;
 
