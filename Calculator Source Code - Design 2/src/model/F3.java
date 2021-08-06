@@ -4,20 +4,19 @@ import view.FunctionResultView;
 
 public class F3 extends AbstractFunction {
     public String functionName = "sinh(x)";
-    String selectedFunctionMessage = "SELECTED FUNCTION: " + functionName + "\n\n";
     double x = 0;
     double result = 0;
 
     @Override
     public void getInputs() {
-        x = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "x");
+        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
     }
 
     @Override
     public void displayResult() {
         String input = "INPUT:" +
                 "\nx = " + x + "\n\n";
-        new FunctionResultView().showResult(selectedFunctionMessage, input, "" + result);
+        new FunctionResultView().showResult(functionName, input, "" + result);
     }
 
     @Override

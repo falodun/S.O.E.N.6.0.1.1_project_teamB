@@ -4,7 +4,6 @@ import view.FunctionResultView;
 
 public class F5 extends AbstractFunction {
     public String functionName = "ab^x";
-    String selectedFunctionMessage = "SELECTED FUNCTION: " + functionName + "\n\n";
     double a = 0;
     double b = 0;
     double x = 0;
@@ -12,9 +11,9 @@ public class F5 extends AbstractFunction {
 
     @Override
     public void getInputs() {
-        a = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "a");
-        b = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "b");
-        x = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "x");
+        a = new FunctionInputField().getDoubleInput(functionName, "Enter value for: a");
+        b = new FunctionInputField().getDoubleInput(functionName, "Enter value for: b");
+        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
     }
 
     @Override
@@ -23,7 +22,7 @@ public class F5 extends AbstractFunction {
                 "\na = " + a +
                 "\nb = " + b +
                 "\nx = " + x + "\n\n";
-        new FunctionResultView().showResult(selectedFunctionMessage, input, "" + result);
+        new FunctionResultView().showResult(functionName, input, "" + result);
     }
 
     @Override

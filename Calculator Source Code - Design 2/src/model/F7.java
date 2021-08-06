@@ -4,15 +4,14 @@ import view.FunctionResultView;
 
 public class F7 extends AbstractFunction {
     public String functionName = "x^y";
-    String selectedFunctionMessage = "SELECTED FUNCTION: " + functionName + "\n\n";
     double x = 0;
     double y = 0;
     double result = 1;
 
     @Override
     public void getInputs() {
-        x = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "x");
-        y = new FunctionInputField().getDoubleInput(selectedFunctionMessage, "y");
+        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
+        y = new FunctionInputField().getDoubleInput(functionName, "Enter value for: y");
     }
 
     @Override
@@ -20,7 +19,7 @@ public class F7 extends AbstractFunction {
         String input = "INPUT:" +
                 "\nx = " + x +
                 "\ny = " + y + "\n\n";
-        new FunctionResultView().showResult(selectedFunctionMessage, input, "" + result);
+        new FunctionResultView().showResult(functionName, input, "" + result);
     }
 
     @Override
