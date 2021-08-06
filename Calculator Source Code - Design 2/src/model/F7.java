@@ -70,5 +70,79 @@ public class F7 extends AbstractFunction {
 				}
        
     }
+	
+	double findRoot(double base, double power) {
+		
+		double resultOfRoot = 1;
+		
+		if(power >= 1) {
+			double[] exponentialValue = findExponentialValue(base, power);
+			
+			resultOfRoot *= exponentialValue[0];
+			power = exponentialValue[1]; 
+		}
+		
+		//fraction power remaining
+		if(power > 0 && power <1) { 
+			
+			//formatting up to 5 decimal places
+			DecimalFormat df = new DecimalFormat("#.#####");  
+			power = Double.parseDouble(df.format(power));
+			
+			double[] fraction = getFractionPart(power);
+			double denominator = root(base, fraction[1]); 
+			resultOfRoot *= findExponentialValue(denominator, fraction[0]*fraction[1])[0];
+		}
+		
+		return resultOfRoot;
+	}
+		
+	
+	public static double[] getFractionPart(double num) {
+		double numerator = num;
+		double denominator = 1;
+		while(!((numerator*denominator) % 1 == 0)) 
+		{
+			denominator++;
+		}
+		double[] parts = {numerator, denominator};
+		return parts;
+	}
+	
+	public static double root(double base, double denominator) { 
+		double precision = 1;
+		double closestRoot = findClosestRootWithPrecision(base, denominator, 0, precision); 
+		while(base < findExponentialValue(closestRoot, denominator)[0] && precision > 0.0000000000001) {
+			closestRoot -= precision;
+			precision *= 0.1;
+			closestRoot = findClosestRootWithPrecision(base, denominator, closestRoot, precision);
+		}
+
+		return closestRoot;
+	}
+	
+	public static double findClosestRootWithPrecision(double base, double power, double closestRoot, double precision) {
+		closestRoot +=precision;
+		double[] temp = findExponentialValue(closestRoot, power);
+		while(temp[0] < base) {
+			closestRoot += precision;
+			temp = findExponentialValue(closestRoot, power);
+		}
+		return closestRoot;
+	}
+	
+	public static double[] findExponentialValue(double base, double power) {
+		double result = 1;
+		
+		while(power > 0) {
+			result *= base;
+			power--;
+			if(power < 1) {
+				break;
+			}
+		}
+		double[] parts = {result , power};
+		return parts;
+	}
 
 }
