@@ -37,23 +37,19 @@ public class F3 extends AbstractFunction {
         if (exponent == 0) {
             return 1;
         }
-
         if (exponent < 0) {
             exponent *= -1;
             isNegativeExponent = true;
         }
-
         if (base < 0 && exponent%1 > 0) {
             return Double.NaN;
         }
-
         if (base == 1) {
             return 1;
         }
 
         double wholePart = (long) exponent;
         double decimalPart = exponent%1;
-
         double remainingWhole = wholePart;
         double nextWhole;
         double copy;
@@ -83,16 +79,16 @@ public class F3 extends AbstractFunction {
             baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
-
-
         return isNegativeExponent ? 1/result : result;
     }
 
     private double raise(double base, double exponent) {
         double result = 1;
+
         if (exponent == 0) {
             return 1;
         }
+
         for (long i = 1; i <= exponent; i++) {
             result *= base;
         }
@@ -105,15 +101,16 @@ public class F3 extends AbstractFunction {
         if (number == 0) {
             return 0;
         }
-
         double precision = 0.000000000000001;
         double oldGuess;
         double guess = 0;
         boolean endLoop = false;
         long index = 0;
+
         while (!endLoop) {
             oldGuess = guess;
             guess = precision*raise(10, index);
+
             if (raise(guess + result, n) < number) {
                 index++;
             }
