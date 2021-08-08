@@ -69,7 +69,7 @@ public class F7 extends AbstractFunction {
 				}
        
     }
-	
+
 	double findRoot(double base, double power) {
 		
 		double resultOfRoot = 1;

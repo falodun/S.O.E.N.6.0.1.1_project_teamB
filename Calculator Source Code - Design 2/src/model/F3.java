@@ -17,7 +17,7 @@ public class F3 extends AbstractFunction {
     public void displayResult() {
         String input = "INPUT:" +
                 "\nx = " + x + "\n\n";
-        new FunctionResultView().showResult(functionName, input, "" + result);
+        new FunctionResultView().showResult(functionName, input, String.format("%.5f", result));
     }
 
     @Override
