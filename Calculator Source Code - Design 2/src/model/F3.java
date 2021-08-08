@@ -1,7 +1,6 @@
 package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
-
 import static constants.Constants.EULER;
 
 public class F3 extends AbstractFunction {
@@ -76,7 +75,6 @@ public class F3 extends AbstractFunction {
         double remainingDecimal = decimalPart;
         double nextDecimal;
         double baseRootedToNextTenthRoot = base;
-
 
         for (long i = 1; i <= 20; i++) {
             copy = remainingDecimal;
