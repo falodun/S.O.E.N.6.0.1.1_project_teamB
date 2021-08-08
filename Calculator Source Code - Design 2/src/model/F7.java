@@ -57,7 +57,7 @@ public class F7 extends AbstractFunction {
 							root = Double.parseDouble(df.format(root));
 							result = root;
 						
-						}else if(powerValue >= 0) {
+						}else if(y >= 0) {
 							double root = findRoot(x, y);
 							
 							//formatting up to 5 decimal places
