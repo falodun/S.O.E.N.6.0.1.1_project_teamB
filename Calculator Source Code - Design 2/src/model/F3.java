@@ -82,7 +82,7 @@ public class F3 extends AbstractFunction {
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
 
-        return isNegativeExponent ? 1/result : result;
+        return isNegativeExponent ? 1.0/result : result;
     }
 
     private double raise(double base, double exponent) {
