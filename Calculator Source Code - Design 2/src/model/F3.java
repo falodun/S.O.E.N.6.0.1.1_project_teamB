@@ -64,6 +64,7 @@ public class F3 extends AbstractFunction {
             if (!firstLoop) {
                 baseRaisedToNextTenthExponent = raise(baseRaisedToNextTenthExponent, 10);
             }
+
             result *= raise(baseRaisedToNextTenthExponent, nextWhole);
             firstLoop = false;
         } while (remainingWhole > 0);
@@ -79,6 +80,7 @@ public class F3 extends AbstractFunction {
             baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
+
         return isNegativeExponent ? 1/result : result;
     }
 
@@ -92,6 +94,7 @@ public class F3 extends AbstractFunction {
         for (long i = 1; i <= exponent; i++) {
             result *= base;
         }
+
         return result;
     }
 
@@ -101,6 +104,7 @@ public class F3 extends AbstractFunction {
         if (number == 0) {
             return 0;
         }
+
         double precision = 0.000000000000001;
         double oldGuess;
         double guess = 0;
@@ -124,6 +128,7 @@ public class F3 extends AbstractFunction {
                 }
             }
         }
+        
         return result;
     }
 
