@@ -99,7 +99,7 @@ public class F3 extends AbstractFunction {
     }
 
     public double nthRoot(double number, long n) {
-        double result = 0;
+        double confirmedGuess = 0;
 
         if (number == 0) {
             return 0;
@@ -114,22 +114,27 @@ public class F3 extends AbstractFunction {
         while (!endLoop) {
             oldGuess = guess;
             guess = precision*raise(10, index);
+            double raisedGuess = raise(guess + confirmedGuess, n);
 
-            if (raise(guess + result, n) < number) {
+            if (raisedGuess < number) {
                 index++;
+            }
+            else if (raisedGuess == number) {
+                confirmedGuess += guess;
+                index = 0;
             }
             else {
                 if (index == 0) {
                     endLoop = true;
                 }
                 else {
-                    result += oldGuess;
+                    confirmedGuess += oldGuess;
                     index = 0;
                 }
             }
         }
 
-        return result;
+        return confirmedGuess;
     }
 
 }
