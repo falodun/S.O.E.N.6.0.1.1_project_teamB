@@ -99,7 +99,7 @@ public class F3 extends AbstractFunction {
         return result;
     }
 
-    public double nthRoot(double number, long n) {
+    private double nthRoot(double number, long n) {
         double confirmedGuess = 0;
 
         if (number == 0) {
