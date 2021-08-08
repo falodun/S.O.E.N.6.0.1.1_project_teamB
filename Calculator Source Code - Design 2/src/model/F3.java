@@ -128,7 +128,7 @@ public class F3 extends AbstractFunction {
                 }
             }
         }
-        
+
         return result;
     }
 

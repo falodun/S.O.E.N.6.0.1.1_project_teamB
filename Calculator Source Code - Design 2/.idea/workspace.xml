@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d0083b61-4399-4ffa-8ae7-293330dace66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/F2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/F3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/F3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomeMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <workItem from="1628021485809" duration="11038000" />
       <workItem from="1628072908458" duration="14755000" />
       <workItem from="1628282047734" duration="617000" />
-      <workItem from="1628385606879" duration="1849000" />
+      <workItem from="1628385606879" duration="3491000" />
     </task>
     <servers />
   </component>
@@ -76,6 +78,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="447" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1628084523774" />
+    <state x="289" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628389034229">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="289" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.720@0.0.1280.720" timestamp="1628389034229" />
     <state x="372" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627930930628">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -104,6 +110,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="338" y="185" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1628385608411" />
+    <state x="310" y="38" width="986" height="705" key="dock-window-1" timestamp="1628387935299">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="310" y="38" width="986" height="705" key="dock-window-1/0.0.1280.720@0.0.1280.720" timestamp="1628387935299" />
     <state x="270" y="57" width="740" height="606" key="find.popup" timestamp="1628282157147">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

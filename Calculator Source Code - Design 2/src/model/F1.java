@@ -2,8 +2,8 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 
-public class F2 extends AbstractFunction {
-    public String functionName = "tan(x)";
+public class F1 extends AbstractFunction {
+    public String functionName = "arccos(x)";
     double x = 0;
     double result = 0;
 
