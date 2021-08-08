@@ -72,8 +72,9 @@ public class F3 extends AbstractFunction {
         double remainingDecimal = decimalPart;
         double nextDecimal;
         double baseRootedToNextTenthRoot = base;
+        long lengthOfDecimalPartProcessed = 20;
 
-        for (long i = 1; i <= 20; i++) {
+        for (long i = 1; i <= lengthOfDecimalPartProcessed; i++) {
             copy = remainingDecimal;
             remainingDecimal = (remainingDecimal%0.1)*10;
             nextDecimal = (long) (copy/0.1);
