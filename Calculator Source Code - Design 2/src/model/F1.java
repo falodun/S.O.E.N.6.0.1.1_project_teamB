@@ -1,15 +1,19 @@
 package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
+import view.ReturnedInput;
 
-public class F2 extends AbstractFunction {
-    public String functionName = "tan(x)";
+public class F1 extends AbstractFunction {
+    public String functionName = "arccos(x)";
     double x = 0;
     double result = 0;
 
     @Override
-    public void getInputs() {
-        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
+    public boolean getInputs() {
+        String inputMessage = "Enter value for: x";
+        ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
+        x = returnedInput.input;
+        return returnedInput.inputWasMade;
     }
 
     @Override

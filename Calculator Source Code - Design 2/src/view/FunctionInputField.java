@@ -3,22 +3,30 @@ package view;
 import javax.swing.*;
 
 public class FunctionInputField {
-    double doubleInput = 0;
+    ReturnedInput returnedInput = new ReturnedInput();
 
-    public double getDoubleInput(String functionName, String inputMessage) {
+    public ReturnedInput getDoubleInput(String functionName, String inputMessage) {
         String message = "SELECTED FUNCTION: " + functionName + "\n\n" + inputMessage;
         String response = JOptionPane.showInputDialog(message);
-        if ((response != null) && (response.length() > 0)) {
-            try {
-                doubleInput = Double.parseDouble(response);
-            }
-            catch (Exception e) {
-                //e.printStackTrace();
-                message = "ERROR: INVALID INPUT\nA real number is expected";
+        if (response != null) {
+            if (response.length() == 0) {
+                message = "ERROR: NO INPUT RECEIVED\nPlease try again";
                 JOptionPane.showMessageDialog(null, message);
                 getDoubleInput(functionName, inputMessage);
             }
+            else {
+                try {
+                    returnedInput.input = Double.parseDouble(response);
+                    returnedInput.inputWasMade = true;
+                }
+                catch (Exception e) {
+                    //e.printStackTrace();
+                    message = "ERROR: INVALID INPUT\nA real number is expected";
+                    JOptionPane.showMessageDialog(null, message);
+                    getDoubleInput(functionName, inputMessage);
+                }
+            }
         }
-        return doubleInput;
+        return returnedInput;
     }
 }
