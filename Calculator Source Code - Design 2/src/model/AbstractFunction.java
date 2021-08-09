@@ -8,8 +8,8 @@ public abstract class AbstractFunction {
         if (inputWasMade) {
             calculateResult();
             displayResult();
-            new HomeMenu().showHomeMenu();
         }
+        new HomeMenu().showHomeMenu();
     }
 
     public abstract boolean getInputs();
