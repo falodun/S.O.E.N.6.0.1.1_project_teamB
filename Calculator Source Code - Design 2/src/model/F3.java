@@ -1,6 +1,8 @@
 package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
+import view.ReturnedInput;
+
 import static constants.Constants.EULER;
 
 public class F3 extends AbstractFunction {
@@ -9,8 +11,11 @@ public class F3 extends AbstractFunction {
     double result = 0;
 
     @Override
-    public void getInputs() {
-        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
+    public boolean getInputs() {
+        String inputMessage = "Enter value for: x";
+        ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
+        x = returnedInput.input;
+        return returnedInput.inputWasMade;
     }
 
     @Override

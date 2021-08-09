@@ -20,28 +20,33 @@ public class HomeMenu {
             "\n[4]    " + f7.functionName;
 
         String response = JOptionPane.showInputDialog(message);
-        if ((response != null) && (response.length() > 0)) {
-            try {
-                int choice = Integer.parseInt(response);
-                if (choice == 1) {
-                    f1.runFunction();
-                }
-                else if(choice == 2) {
-                    f3.runFunction();
-                }
-                else if(choice == 3) {
-                    f5.runFunction();
-                }
-                else if(choice == 4) {
-                    f7.runFunction();
-                }
-                else {
-                    handleInvalidInput("ERROR: INVALID OPTION");
-                }
+        if (response != null) {
+            if (response.length() == 0) {
+                handleInvalidInput("ERROR: NO INPUT RECEIVED\nPlease try again");
             }
-            catch (Exception e) {
-                //e.printStackTrace();
-                handleInvalidInput("ERROR: INVALID INPUT\nAn integer number is expected");
+            else {
+                try {
+                    int choice = Integer.parseInt(response);
+                    if (choice == 1) {
+                        f1.runFunction();
+                    }
+                    else if(choice == 2) {
+                        f3.runFunction();
+                    }
+                    else if(choice == 3) {
+                        f5.runFunction();
+                    }
+                    else if(choice == 4) {
+                        f7.runFunction();
+                    }
+                    else {
+                        handleInvalidInput("ERROR: INVALID OPTION");
+                    }
+                }
+                catch (Exception e) {
+                    //e.printStackTrace();
+                    handleInvalidInput("ERROR: INVALID INPUT\nAn integer number is expected");
+                }
             }
         }
     }

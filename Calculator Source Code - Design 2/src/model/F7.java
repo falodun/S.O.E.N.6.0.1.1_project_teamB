@@ -1,6 +1,7 @@
 package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
+import view.ReturnedInput;
 
 public class F7 extends AbstractFunction {
     public String functionName = "x^y";
@@ -9,9 +10,16 @@ public class F7 extends AbstractFunction {
     double result = 1;
 
     @Override
-    public void getInputs() {
-        x = new FunctionInputField().getDoubleInput(functionName, "Enter value for: x");
-        y = new FunctionInputField().getDoubleInput(functionName, "Enter value for: y");
+    public boolean getInputs() {
+		String inputMessage = "Enter value for: x";
+		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
+		x = returnedInput.input;
+		if (returnedInput.inputWasMade) {
+			inputMessage = "Enter value for: y";
+			returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
+			y = returnedInput.input;
+		}
+		return returnedInput.inputWasMade;
     }
 
     @Override
