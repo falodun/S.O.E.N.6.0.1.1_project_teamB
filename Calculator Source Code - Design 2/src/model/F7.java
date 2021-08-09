@@ -31,7 +31,7 @@ public class F7 extends AbstractFunction {
     }
 
     @Override
-    public void calculateResult() {
+    public void calculateResult() {/*Todo:Code commented-out temporarily due to containing error, so that project can run
         		//CASE 1: negative base values with fraction powers
 				if(x < 0 && y % 1 != 0) {
 					System.out.println("Error: Negative base can not have non-integer powers");
@@ -76,7 +76,7 @@ public class F7 extends AbstractFunction {
 					}
 				}
        
-    }
+    */}/*Todo:Code commented-out temporarily due to containing error, so that project can run
 
 	double findRoot(double base, double power) {
 		
@@ -102,7 +102,7 @@ public class F7 extends AbstractFunction {
 		}
 		
 		return resultOfRoot;
-	}
+	}*/
 		
 	
 	public static double[] getFractionPart(double num) {
