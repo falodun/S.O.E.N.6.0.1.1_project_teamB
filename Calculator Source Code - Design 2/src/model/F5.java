@@ -57,7 +57,7 @@ public class F5 extends AbstractFunction {
 			}
 			
 			result = res;
-//			printResult(a, b, x, result);
+			printResult(a, b, x, result);
 		}
     }
     
@@ -90,14 +90,14 @@ public class F5 extends AbstractFunction {
 		return ret;
 	}
 	
-//	public void printResult(double a, double b, double x, double result) {
-//		System.out.printf("f(x) = (%.3f)(%.3f)^(%.3f) = %.5f", a,b,x,result);
-//	}
+	public void printResult(double a, double b, double x, double result) {
+		System.out.printf("f(x) = (%.3f)(%.3f)^(%.3f) = %.5f", a,b,x,result);
+	}
 	
 	public double root(double number, double root) {
 		double percision = 1;
 		double closestRoot = findClosestRootWithPercision(number, root, 0, percision);
-		while(number < doExponential(closestRoot, root)[0] && percision > 0.0000000000001) 
+		while(number < doExponential(closestRoot, root)[0] && percision > 0.000000000000001) 
 		{
 			closestRoot -= percision;
 			percision *= 0.1;
