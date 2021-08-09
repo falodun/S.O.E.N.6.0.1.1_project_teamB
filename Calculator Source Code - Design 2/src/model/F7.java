@@ -27,14 +27,20 @@ public class F7 extends AbstractFunction {
         String input = "INPUT:" +
                 "\nx = " + x +
                 "\ny = " + y + "\n\n";
-        new FunctionResultView().showResult(functionName, input, "" + result);
+        if(result != 0) {
+        	new FunctionResultView().showResult(functionName, input, "" + result);	
+        } else {
+        	new FunctionResultView().showResult(functionName, input, "" + "Error: Negative base can not have non-integer powers");
+        }
+        
     }
 
     @Override
-    public void calculateResult() {/*Todo:Code commented-out temporarily due to containing error, so that project can run
+    public void calculateResult() {
         		//CASE 1: negative base values with fraction powers
 				if(x < 0 && y % 1 != 0) {
 					System.out.println("Error: Negative base can not have non-integer powers");
+					result = 0;
 				}else {
 					
 					//CASE 2: Power is a positive integer
@@ -45,38 +51,35 @@ public class F7 extends AbstractFunction {
 					//CASE 3: Power is a negative integer
 					}else if(y < 0 && y % 1 == 0) { 
 					
-						x = 1 / x;
-						y = -1 * y;
 						
-						for(int i = 1; i <= y; i++) {
-							result *= x;
+						for(int i = 1; i <= -y; i++) {
+							result *= 1/x;
 						}
 					//CASE 4: Power is a fraction e.g. square root, cube root etc.	
 					}else if(y % 1 != 0) { 
 					
 						if(y < 0) {
-							x = 1 / x;
-							y = -1 * y;
 							
-							double root = findRoot(x, y);
+							double root = findRoot(1/x, -y);
 							
 							//formatting up to 5 decimal places
-							DecimalFormat df = new DecimalFormat("#.#####");  
-							root = Double.parseDouble(df.format(root));
+							//DecimalFormat df = new DecimalFormat("#.#####");  
+							//root = Double.parseDouble(df.format(root));
+							String.format("%.5", root);
 							result = root;
 						
 						}else if(y >= 0) {
 							double root = findRoot(x, y);
 							
 							//formatting up to 5 decimal places
-							DecimalFormat df = new DecimalFormat("#.#####");  
-							root = Double.parseDouble(df.format(root));
+							//DecimalFormat df = new DecimalFormat("#.#####");  
+							String.format("%.5", root);
 							result = root;	
 						}
 					}
 				}
        
-    */}/*Todo:Code commented-out temporarily due to containing error, so that project can run
+    }
 
 	double findRoot(double base, double power) {
 		
@@ -93,8 +96,8 @@ public class F7 extends AbstractFunction {
 		if(power > 0 && power <1) { 
 			
 			//formatting up to 5 decimal places
-			DecimalFormat df = new DecimalFormat("#.#####");  
-			power = Double.parseDouble(df.format(power));
+			//DecimalFormat df = new DecimalFormat("#.#####");  
+			//power = Double.parseDouble(df.format(power));
 			
 			double[] fraction = getFractionPart(power);
 			double denominator = root(base, fraction[1]); 
@@ -102,7 +105,7 @@ public class F7 extends AbstractFunction {
 		}
 		
 		return resultOfRoot;
-	}*/
+	}
 		
 	
 	public static double[] getFractionPart(double num) {
@@ -153,3 +156,4 @@ public class F7 extends AbstractFunction {
 	}
 
 }
+
