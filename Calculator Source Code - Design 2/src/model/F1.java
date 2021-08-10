@@ -65,7 +65,7 @@ public class F1 extends AbstractFunction {
 	 */
 	public double arcCosX(double x) {
 
-		if (x >= 1 || x <= -1) {
+		if (x > 1 || x < -1) {
 			return Double.NaN;
 		}
 		double temp = getSquareRoot(1 - (x * x)) / x; // arcsin(x) = arctan(sqrt(1-(x*x)/x)
