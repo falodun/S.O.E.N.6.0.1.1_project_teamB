@@ -6,6 +6,7 @@ import view.ReturnedInput;
 
 /**
  * This class F1 is used to find the arcCosine of a number
+ * 
  * @author Tejaswini Devireddy
  * @studentID 40186127
  *
@@ -20,13 +21,14 @@ public class F1 extends AbstractFunction {
 
 	/**
 	 * Get inputs from user through UI
+	 * 
 	 * @return the input from the user
 	 */
 	@Override
 	public boolean getInputs() {
 		String inputMessage = "Enter value of x between -1 and 1 and both inclusive for finite output";
 		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
-		x = returnedInput.input; 
+		x = returnedInput.input;
 		return returnedInput.inputWasMade;
 	}
 
@@ -36,9 +38,9 @@ public class F1 extends AbstractFunction {
 	@Override
 	public void displayResult() {
 		String input = "INPUT:" + "\nx = " + x + "\n\n";
-		
-		new FunctionResultView().showResult(functionName, input,
-			"Radians : "+(String.format("%.5f", this.result))+"\n Degress : "+(String.format("%.5f", convertRadToDegress(result))));
+
+		new FunctionResultView().showResult(functionName, input, "Radians : " + (String.format("%.5f", this.result))
+				+ "\n Degress : " + (String.format("%.5f", convertRadToDegress(result))));
 	}
 
 	/**
@@ -49,31 +51,27 @@ public class F1 extends AbstractFunction {
 		result = arcCosX(x);
 	}
 
-	
-	public static double convertRadToDegress(double radian)
-	{
-		return(radian * (180/pi));
+	public static double convertRadToDegress(double radian) {
+		return (radian * (180 / pi));
 	}
+
 	/**
-	 * Returns the arc cosine of a value. The returned angle is in the
-	 * range 0.0 through pi; returns NaN if the argument is not in the
-	 * range -1 to 1
+	 * Returns the arc cosine of a value. The returned angle is in the range 0.0
+	 * through pi; returns NaN if the argument is not in the range -1 to 1
 	 * 
 	 * @param x the value whose arc cosine is to be returned.
 	 * @return the arc cosine of the argument
 	 */
 	public double arcCosX(double x) {
-		
-		if(x < -1 || x > 1)
-		{
-		   return Double.NaN;
+
+		if (x < -1 || x > 1) {
+			return Double.NaN;
 		}
 		double temp = getSquareRoot(1 - (x * x)) / x; // arcsin(x) = arctan(sqrt(1-(x*x)/x)
 		result = x < 0 ? pi + arcTanx(temp) : arcTanx(temp); // radians value
 		return result;
 	}
 
-	
 	/**
 	 * Returns the square root of a number
 	 * 
@@ -91,7 +89,7 @@ public class F1 extends AbstractFunction {
 	}
 
 	/**
-	 * Returns the arc tangent of a value. 
+	 * Returns the arc tangent of a value.
 	 * 
 	 * @param x the value whose arc tangent is to be returned.
 	 * @return the arc tangent of the argument
