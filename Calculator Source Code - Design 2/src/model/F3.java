@@ -27,10 +27,10 @@ public class F3 extends AbstractFunction {
 
     @Override
     public void calculateResult() {
-        result = sinH(x);
+        result = sinh(x);
     }
 
-    public double sinH(double x) {
+    public double sinh(double x) {
         double eulerRaisedToX = raiseBaseToExponent(EULER, x);
         return (eulerRaisedToX-(1/eulerRaisedToX))/2;
     }
