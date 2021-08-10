@@ -1,12 +1,8 @@
 package model;
 
-import javax.swing.JOptionPane;
-
 import view.FunctionInputField;
 import view.FunctionResultView;
 import view.ReturnedInput;
-import view.HomeMenu;
-import exceptions.ValueOutOfRangeException;
 
 /**
  * This class F1 is used to find the arcCosine of a number
@@ -34,15 +30,6 @@ public class F1 extends AbstractFunction {
 		String inputMessage = "Enter value of x between -1 and 1 and both inclusive for finite output";
 		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
 		x = returnedInput.input;
-		try {
-			if (x < -1 || x > 1) {
-				throw new ValueOutOfRangeException(" Value between -1 and 1 is expected");
-			}
-		} catch (ValueOutOfRangeException exception) {
-			JOptionPane.showMessageDialog(null, exception.msg);
-			getInputs();
-
-		}
 		return returnedInput.inputWasMade;
 
 	}
@@ -53,7 +40,6 @@ public class F1 extends AbstractFunction {
 	@Override
 	public void displayResult() {
 		String input = "INPUT:" + "\nx = " + x + "\n\n";
-
 		new FunctionResultView().showResult(functionName, input, "Radians : " + (String.format("%.5f", this.result))
 				+ "\n Degress : " + (String.format("%.5f", convertRadToDegress(result))));
 	}
@@ -79,6 +65,9 @@ public class F1 extends AbstractFunction {
 	 */
 	public double arcCosX(double x) {
 
+		if (x >= 1 || x <= -1) {
+			return Double.NaN;
+		}
 		double temp = getSquareRoot(1 - (x * x)) / x; // arcsin(x) = arctan(sqrt(1-(x*x)/x)
 		result = x < 0 ? pi + arcTanx(temp) : arcTanx(temp); // radians value
 		return result;
