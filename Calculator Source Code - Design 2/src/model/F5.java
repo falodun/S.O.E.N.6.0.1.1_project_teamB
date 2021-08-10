@@ -14,7 +14,9 @@ public class F5 extends AbstractFunction {
     public double b = 0;
     public double x = 0;
     public double result = 0;
-    public String errorMsg = "";
+    public F5FunctionInputField f5InputFieldForA = new F5FunctionInputField();
+    public F5FunctionInputField f5InputFieldForB = new F5FunctionInputField();
+    public F5FunctionInputField f5InputFieldForX = new F5FunctionInputField();
 
     /**
      * Get inputs from user for a, b, and x parameters for ab^x function
@@ -22,16 +24,16 @@ public class F5 extends AbstractFunction {
     @Override
     public boolean getInputs() {
 		String inputMessage = "Enter value for: a";
-		ReturnedInput returnedInput = new F5FunctionInputField().getDoubleInputForA(functionName, inputMessage);
+		ReturnedInput returnedInput = f5InputFieldForA.getDoubleInputForA(functionName, inputMessage);
 		a = returnedInput.input;
 		if (returnedInput.inputWasMade) {
 			inputMessage = "Enter value for: b";
-			returnedInput = new F5FunctionInputField().getDoubleInputForB(functionName, inputMessage);
+			returnedInput = f5InputFieldForB.getDoubleInputForB(functionName, inputMessage);
 			b = returnedInput.input;
 		}
 		if (returnedInput.inputWasMade) {
 			inputMessage = "Enter value for: x";
-			returnedInput = new F5FunctionInputField().getDoubleInput(functionName, inputMessage);
+			returnedInput = f5InputFieldForX.getDoubleInput(functionName, inputMessage);
 			x = returnedInput.input;
 		}
 		return returnedInput.inputWasMade;
@@ -54,16 +56,7 @@ public class F5 extends AbstractFunction {
      */
     @Override
     public void calculateResult() {
-    	if(a == 0) 
-    	{
-    		errorMsg = "ERROR: INVALID INPUT. Parameter 'a' cannot be 0.";
-    		return;
-    	}else if(b == 0 || b < 0 || b == 1) 
-    	{
-    		errorMsg = "ERROR: INVALID INPUT. Parameter 'b' must be greater than 0, and cannot be 1.";
-    		return;
-    	}
-        double xClone = x;
+    	double xClone = x;
 		boolean isNegative = xClone < 0;
 		
 		//when x = 0, b^0 = 1, therefore ab^x = a
