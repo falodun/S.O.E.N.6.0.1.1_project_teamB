@@ -3,12 +3,25 @@ import view.FunctionInputField;
 import view.FunctionResultView;
 import view.ReturnedInput;
 
+/**
+ * This class F7 is used to find the power of a number
+ * 
+ * @author Himani Himani
+ * @studentID 40109233
+ *
+ */
+
 public class F7 extends AbstractFunction {
     public String functionName = "x^y";
     double x = 0;
     double y = 0;
     double result = 1;
 
+	/**
+	 * Get inputs from user through UI
+	 * 
+	 * @return the input from the user
+	 */
     @Override
     public boolean getInputs() {
 		String inputMessage = "Enter value for: x";
@@ -22,6 +35,9 @@ public class F7 extends AbstractFunction {
 		return returnedInput.inputWasMade;
     }
 
+	/**
+	 * displays result in the UI
+	 */
     @Override
     public void displayResult() {
         String input = "INPUT:" +
@@ -35,6 +51,10 @@ public class F7 extends AbstractFunction {
         
     }
 
+
+	/**
+	 * calculate the result of power of a number
+	 */
     @Override
     public void calculateResult() {
         		
@@ -90,7 +110,14 @@ public class F7 extends AbstractFunction {
 				}
        
     }
-
+    
+    /**
+	 * Returns the root of the base value
+	 * 
+	 * @param base whose power is to be calculated
+	 * @param power the exponent value
+	 * @return the root of the base argument
+	 */
 	double findRoot(double base, double power) {
 		
 		double resultOfRoot = 1;
@@ -120,7 +147,13 @@ public class F7 extends AbstractFunction {
 		return resultOfRoot;
 	}
 		
-	
+	/**
+	 * Returns the array with fraction part
+	 * 
+	 * @param num 
+	 * 
+	 * @return the array of fraction parts
+	 */
 	public static double[] getFractionPart(double num) {
 		double numerator = num;
 		double denominator = 1;
@@ -133,6 +166,14 @@ public class F7 extends AbstractFunction {
 		return parts;
 	}
 	
+	/**
+	 * Returns the closestRoot with precision
+	 * 
+	 * @param base
+	 * @param denominator
+	 * 
+	 * @return the closest root 
+	 */
 	public static double root(double base, double denominator) { 
 		double precision = 1;
 		double closestRoot = findClosestRootWithPrecision(base, denominator, 0, precision); 
@@ -145,6 +186,16 @@ public class F7 extends AbstractFunction {
 		return closestRoot;
 	}
 	
+	/**
+	 * Returns the closest root with precision
+	 * 
+	 * @param base
+	 * @param power
+	 * @param closestRoot
+	 * @param precision
+	 * 
+	 * @return the closest root with precision
+	 */
 	public static double findClosestRootWithPrecision(double base, double power, double closestRoot, double precision) {
 		closestRoot +=precision;
 		double[] temp = findExponentialValue(closestRoot, power);
@@ -155,6 +206,14 @@ public class F7 extends AbstractFunction {
 		return closestRoot;
 	}
 	
+	/**
+	 * Returns the exponential value
+	 * 
+	 * @param base
+	 * @param power
+	 * 
+	 * @return the parts of exponential value
+	 */
 	public static double[] findExponentialValue(double base, double power) {
 		double result = 1;
 		
@@ -170,4 +229,5 @@ public class F7 extends AbstractFunction {
 	}
 
 }
+
 
