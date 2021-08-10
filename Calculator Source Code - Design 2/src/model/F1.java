@@ -4,6 +4,12 @@ import view.FunctionInputField;
 import view.FunctionResultView;
 import view.ReturnedInput;
 
+/**
+ * This class F1 is used to find the arcCosine of a number
+ * @author Tejaswini Devireddy
+ * @studentID 40186127
+ *
+ */
 public class F1 extends AbstractFunction {
 	public String functionName = "arccos(x)";
 	double x = 0;
@@ -18,7 +24,7 @@ public class F1 extends AbstractFunction {
 	 */
 	@Override
 	public boolean getInputs() {
-		String inputMessage = "Enter value of x ";
+		String inputMessage = "Enter value of x between -1 and 1 and both inclusive for finite output";
 		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
 		x = returnedInput.input; 
 		return returnedInput.inputWasMade;
@@ -32,7 +38,7 @@ public class F1 extends AbstractFunction {
 		String input = "INPUT:" + "\nx = " + x + "\n\n";
 		
 		new FunctionResultView().showResult(functionName, input,
-			"Radians : "+(String.format("%.5f", this.result)));
+			"Radians : "+(String.format("%.5f", this.result))+"\n Degress : "+(String.format("%.5f", convertRadToDegress(result))));
 	}
 
 	/**
@@ -44,6 +50,10 @@ public class F1 extends AbstractFunction {
 	}
 
 	
+	public static double convertRadToDegress(double radian)
+	{
+		return(radian * (180/pi));
+	}
 	/**
 	 * Returns the arc cosine of a value. The returned angle is in the
 	 * range 0.0 through pi; returns NaN if the argument is not in the

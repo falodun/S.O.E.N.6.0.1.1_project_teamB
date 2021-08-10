@@ -30,7 +30,7 @@ public class F1Tests {
 	}
 	
 	/*
-	 * Input not in the range -1 and 1
+	 * Input not in the range -1 and 1, then returns NaN
 	 */
 	@Test
 	public void test3() {
@@ -39,7 +39,7 @@ public class F1Tests {
 	}
 	
 	/*
-	 * Input in the range -1 and 1
+	 * Input in the range -1 and 1 and returns NaN
 	 */
 	@Test
 	public void test4() {
@@ -48,7 +48,7 @@ public class F1Tests {
 	}
 
 	/*
-	 * Input in the range -1 and 1
+	 * Input in the range -1 and 1, then it does not return NaN
 	 */
 	@Test
 	public void test5() {
@@ -64,4 +64,16 @@ public class F1Tests {
 		double x = 1;
 		assertEquals(String.valueOf(f1.arcTanx(x)), String.valueOf("0.7854111405631049"));
 	}
+	
+	
+	/*
+	 * Convert radians to degrees
+	 */
+	@Test
+	public void test7() {
+		double x = 0.83658;
+		assertEquals(String.valueOf(f1.convertRadToDegress(x)), String.valueOf("47.932543711942046"));
+	}
+	
+	
 }
