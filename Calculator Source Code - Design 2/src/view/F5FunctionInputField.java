@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Natheepan Ganeshamoorthy (Natt)
  *
  */
-public class FunctionInputFieldForF5 extends FunctionInputField{
+public class F5FunctionInputField extends FunctionInputField{
 	
 	/**
 	 * Request user to enter parameter 'a' and ensure it is a real number, and it is not equal to zero

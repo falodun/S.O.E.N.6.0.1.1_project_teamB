@@ -1,5 +1,5 @@
 package model;
-import view.FunctionInputFieldForF5;
+import view.F5FunctionInputField;
 import view.FunctionResultView;
 import view.ReturnedInput;
 
@@ -22,16 +22,16 @@ public class F5 extends AbstractFunction {
     @Override
     public boolean getInputs() {
 		String inputMessage = "Enter value for: a";
-		ReturnedInput returnedInput = new FunctionInputFieldForF5().getDoubleInputForA(functionName, inputMessage);
+		ReturnedInput returnedInput = new F5FunctionInputField().getDoubleInputForA(functionName, inputMessage);
 		a = returnedInput.input;
 		if (returnedInput.inputWasMade) {
 			inputMessage = "Enter value for: b";
-			returnedInput = new FunctionInputFieldForF5().getDoubleInputForB(functionName, inputMessage);
+			returnedInput = new F5FunctionInputField().getDoubleInputForB(functionName, inputMessage);
 			b = returnedInput.input;
 		}
 		if (returnedInput.inputWasMade) {
 			inputMessage = "Enter value for: x";
-			returnedInput = new FunctionInputFieldForF5().getDoubleInput(functionName, inputMessage);
+			returnedInput = new F5FunctionInputField().getDoubleInput(functionName, inputMessage);
 			x = returnedInput.input;
 		}
 		return returnedInput.inputWasMade;
