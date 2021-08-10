@@ -141,4 +141,30 @@ public class F5Tests {
 		f5.calculateResult();
 		assertEquals(34938.56215, f5.result, 0.00001);
 	}
+	
+	/**
+	 * Testing Variable x in ab^x where x < -1 and is integer number
+	 */
+	@Test
+	public void testLessThanMinusOneAndIntegerForPowerVariableX() {
+		F5 f5 = new F5();
+		f5.a = 1;
+		f5.b = 5;
+		f5.x = -5;
+		f5.calculateResult();
+		assertEquals(0.00032, f5.result, 0.00001);
+	}
+	
+	/**
+	 * Testing Variable x in ab^x where x < -1 and is a decimal number
+	 */
+	@Test
+	public void testLessThanMinusOneAndDecimalForPowerVariableX() {
+		F5 f5 = new F5();
+		f5.a = 1;
+		f5.b = 5;
+		f5.x = -3.5;
+		f5.calculateResult();
+		assertEquals(0.00358, f5.result, 0.00001);
+	}
 }
