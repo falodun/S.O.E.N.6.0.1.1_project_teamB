@@ -157,7 +157,7 @@ public class F5 extends AbstractFunction {
 	 * @param result
 	 */
 	public void printResult(double a, double b, double x, double result) {
-		System.out.printf("f(x) = (%.3f)(%.3f)^(%.3f) = %.5f", a,b,x,result);
+		System.out.printf("f(x) = (%.3f)(%.3f)^(%.3f) = %.5f \n", a,b,x,result);
 	}
 	
 	/**
