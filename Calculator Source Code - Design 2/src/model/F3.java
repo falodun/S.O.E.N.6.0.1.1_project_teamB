@@ -2,7 +2,6 @@ package model;
 import view.FunctionInputField;
 import view.FunctionResultView;
 import view.ReturnedInput;
-
 import static constants.Constants.EULER;
 
 public class F3 extends AbstractFunction {
@@ -53,36 +52,23 @@ public class F3 extends AbstractFunction {
             return 1;
         }
 
-        double wholePart = (long) exponent;
-        double decimalPart = exponent%1;
-        double remainingWhole = wholePart;
-        double nextWhole;
-        double copy;
-        boolean firstLoop = true;
+        double remainingWholes = (long) exponent;
+        double remainingDecimals = modulus(exponent, 1, 14);
         double baseRaisedToNextTenthExponent = base;
+        
+        result *= raise(baseRaisedToNextTenthExponent, remainingWholes);
+        
+        if (result == Double.POSITIVE_INFINITY) {
+    		return isNegativeExponent ? 1.0/result : result;
+    	}
 
-        do {
-            copy = remainingWhole;
-            remainingWhole /= 10;
-            nextWhole = copy%10;
-
-            if (!firstLoop) {
-                baseRaisedToNextTenthExponent = raise(baseRaisedToNextTenthExponent, 10);
-            }
-
-            result *= raise(baseRaisedToNextTenthExponent, nextWhole);
-            firstLoop = false;
-        } while (remainingWhole > 0);
-
-        double remainingDecimal = decimalPart;
         double nextDecimal;
         double baseRootedToNextTenthRoot = base;
-        long lengthOfDecimalPartProcessed = 20;
+        long lengthOfDecimalPartProcessed = 100;
 
         for (long i = 1; i <= lengthOfDecimalPartProcessed; i++) {
-            copy = remainingDecimal;
-            remainingDecimal = (remainingDecimal%0.1)*10;
-            nextDecimal = (long) (copy/0.1);
+            nextDecimal = (long) (remainingDecimals/0.1);
+            remainingDecimals = modulus(remainingDecimals, 0.1, 14)*10;
             baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
@@ -93,13 +79,17 @@ public class F3 extends AbstractFunction {
     private double raise(double base, double exponent) {
         double result = 1;
 
-        if (exponent == 0) {
+        if (exponent == 0 || base == 1) {
             return 1;
         }
 
-        for (long i = 1; i <= exponent; i++) {
-            result *= base;
+        for (double i = 1; i <= exponent; i++) {
+        	if (result == Double.POSITIVE_INFINITY) {
+        		return result;
+        	}
+        	result *= base;
         }
+        
 
         return result;
     }
@@ -112,29 +102,61 @@ public class F3 extends AbstractFunction {
         }
 
         double precision = 0.000000000000001;
-        double oldGuess;
-        double guess = 0;
+        double guess;
         boolean endLoop = false;
         long index = 0;
 
         while (!endLoop) {
-            oldGuess = guess;
             guess = precision*raise(10, index);
             double raisedGuess = raise(guess + confirmedGuess, n);
 
             if (raisedGuess < number) {
+            	confirmedGuess += guess;
                 index++;
             }
             else if (raisedGuess == number) {
                 confirmedGuess += guess;
-                index = 0;
+                endLoop = true;
             }
             else {
                 if (index == 0) {
                     endLoop = true;
                 }
                 else {
-                    confirmedGuess += oldGuess;
+                    index = 0;
+                }
+            }
+        }
+
+        return confirmedGuess;
+    }
+
+    private double modulus(double number, double divisor, long decimalPlace) {
+        
+    	double wholePart = (long) (number/divisor);
+        double confirmedGuess = 0;
+        double precision = 1/(raise(10, decimalPlace));
+        double guess;
+        boolean endLoop = false;
+        long index = 0;
+
+        while (!endLoop) {
+            guess = precision*raise(10, index);
+            double combinedGuess = guess + confirmedGuess + (wholePart*divisor);
+
+            if (combinedGuess < number) {
+            	confirmedGuess += guess;
+                index++;
+            }
+            else if (combinedGuess == number) {
+                confirmedGuess += guess;
+                endLoop = true;
+            }
+            else {
+                if (index == 0) {
+                    endLoop = true;
+                }
+                else {
                     index = 0;
                 }
             }

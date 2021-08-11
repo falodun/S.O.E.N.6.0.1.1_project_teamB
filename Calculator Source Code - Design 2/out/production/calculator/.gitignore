@@ -1,7 +1,8 @@
 /Main.class
+/.classpath
+/.gitignore
+/.project
 /constants/
 /model/
 /tests/
 /view/
-/exceptions.class
-/exceptions/
