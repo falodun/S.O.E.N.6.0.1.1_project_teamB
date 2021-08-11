@@ -2,8 +2,15 @@ package view;
 import model.*;
 import javax.swing.JOptionPane;
 
+/**
+ * Class HomeMenu implements a user-interface for the program's Home Menu
+ * @author Adekunle Falodun
+ */
 public class HomeMenu {
 
+	/**
+     * Method showHomeMenu shows the Home Menu
+     */
     public void showHomeMenu() {
         F1 f1 = new F1();
         F3 f3 = new F3();
@@ -51,6 +58,10 @@ public class HomeMenu {
         }
     }
 
+    /**
+     * Method handleInvalidInput shows an error message
+     * @param message   holds the error message text
+     */
     private void handleInvalidInput(String message) {
         JOptionPane.showMessageDialog(null, message);
         showHomeMenu();

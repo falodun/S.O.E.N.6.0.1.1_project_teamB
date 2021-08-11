@@ -38,7 +38,7 @@ public class F3 extends AbstractFunction {
     }
 
     /**
-     * Concrete Method displayResult displays result
+     * Concrete Method displayResult displays result of the function's calculation
      */
     @Override
     public void displayResult() {
@@ -48,7 +48,7 @@ public class F3 extends AbstractFunction {
     }
 
     /**
-     * Concrete Method calculateResult calculates result
+     * Concrete Method calculateResult calculates the function's result
      */
     @Override
     public void calculateResult() {
@@ -107,7 +107,7 @@ public class F3 extends AbstractFunction {
         	//and can be processed one digit at a time.
             nextDecimal = (long) (remainingDecimals/0.1);
             remainingDecimals = modulus(remainingDecimals, 0.1, 14)*10;
-            //the root of a decimal digit is the tenth-root of the root of the next decimal digit on its left
+            //the root for a decimal digit is the tenth-root for the root for the next decimal digit on its left
             baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);//tenth root
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
@@ -140,8 +140,8 @@ public class F3 extends AbstractFunction {
     }
 
     /**
-     * Method nthRoot, does the nth-root of number
-     * @param number stores the number whose nth-root is to be calculated
+     * Method nthRoot, does the nth-root of a number
+     * @param number  stores the number whose nth-root is to be calculated
      * @param n   stores a number that specifies the root
      * @return double
      */

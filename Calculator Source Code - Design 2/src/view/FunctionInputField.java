@@ -8,6 +8,7 @@ import javax.swing.*;
  * @author Adekunle Falodun
  */
 public class FunctionInputField {
+	
 	/**
 	 * ReturnedInput returnedInput
 	 */
@@ -17,7 +18,7 @@ public class FunctionInputField {
      * Method getDoubleInput gets user-input of a double type number
      * @param functionName   holds the name of the current function using the input field
      * @param inputMessage   holds the input's prompt message
-     * @return double
+     * @return ReturnedInput
      */
     public ReturnedInput getDoubleInput(String functionName, String inputMessage) {
         String message = "SELECTED FUNCTION: " + functionName + "\n\n" + inputMessage;

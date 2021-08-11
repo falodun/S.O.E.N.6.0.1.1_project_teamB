@@ -3,7 +3,7 @@ import view.HomeMenu;
 import view.ReturnedInput;
 
 /**
- * Abstract Class AbstractFunction acts as a template for concrete functions
+ * Abstract Class AbstractFunction acts as a template for the concrete functions
  * @author Adekunle Falodun
  */
 public abstract class AbstractFunction {
