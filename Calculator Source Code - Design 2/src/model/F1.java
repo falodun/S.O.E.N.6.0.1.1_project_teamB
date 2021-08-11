@@ -25,12 +25,12 @@ public class F1 extends AbstractFunction {
 	 * @return the input from the user
 	 */
 	@Override
-	public boolean getInputs() {
+	public ReturnedInput getInputs() {
 
 		String inputMessage = "Enter value of x between -1 and 1 and both inclusive for finite output";
 		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
 		x = returnedInput.input;
-		return returnedInput.inputWasMade;
+		return returnedInput;
 
 	}
 
@@ -41,7 +41,7 @@ public class F1 extends AbstractFunction {
 	public void displayResult() {
 		String input = "INPUT:" + "\nx = " + x + "\n\n";
 		new FunctionResultView().showResult(functionName, input, "Radians : " + (String.format("%.5f", this.result))
-				+ "\n Degress : " + (String.format("%.5f", convertRadToDegress(result))));
+				+ "\nDegress : " + (String.format("%.5f", convertRadToDegress(result))));
 	}
 
 	/**

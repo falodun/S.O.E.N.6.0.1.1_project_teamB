@@ -23,7 +23,7 @@ public class F7 extends AbstractFunction {
 	 * @return the input from the user
 	 */
     @Override
-    public boolean getInputs() {
+    public ReturnedInput getInputs() {
 		String inputMessage = "Enter value for: x";
 		ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
 		x = returnedInput.input;
@@ -32,7 +32,7 @@ public class F7 extends AbstractFunction {
 			returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
 			y = returnedInput.input;
 		}
-		return returnedInput.inputWasMade;
+		return returnedInput;
     }
 
 	/**

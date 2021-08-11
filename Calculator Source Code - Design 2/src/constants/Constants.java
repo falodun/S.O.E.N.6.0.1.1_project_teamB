@@ -5,5 +5,9 @@ package constants;
  * @author Adekunle Falodun
  */
 public interface Constants {
+	
+	/**
+     * Holds the Euler constant
+     */
     double EULER = 2.71828182846;
 }

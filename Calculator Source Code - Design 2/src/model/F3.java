@@ -10,11 +10,11 @@ public class F3 extends AbstractFunction {
     double result = 0;
 
     @Override
-    public boolean getInputs() {
+    public ReturnedInput getInputs() {
         String inputMessage = "Enter value for: x";
         ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
         x = returnedInput.input;
-        return returnedInput.inputWasMade;
+        return returnedInput;
     }
 
     @Override

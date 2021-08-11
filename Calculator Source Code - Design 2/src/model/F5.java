@@ -22,7 +22,7 @@ public class F5 extends AbstractFunction {
      * Get inputs from user for a, b, and x parameters for ab^x function
      */
     @Override
-    public boolean getInputs() {
+    public ReturnedInput getInputs() {
 		String inputMessage = "Enter value for: a";
 		ReturnedInput returnedInput = f5InputFieldForA.getDoubleInputForA(functionName, inputMessage);
 		a = returnedInput.input;
@@ -36,7 +36,7 @@ public class F5 extends AbstractFunction {
 			returnedInput = f5InputFieldForX.getDoubleInput(functionName, inputMessage);
 			x = returnedInput.input;
 		}
-		return returnedInput.inputWasMade;
+		return returnedInput;
     }
 
     /**

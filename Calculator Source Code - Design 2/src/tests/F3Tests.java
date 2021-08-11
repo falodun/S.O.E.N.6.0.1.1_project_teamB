@@ -4,11 +4,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import model.F3;
 import static constants.Constants.EULER;
+
 /**
- * 
  * Test Case to compare F3's results with that of the Math library
  * @author Adekunle Falodun
- *
  */
 public class F3Tests {
     F3 f3 = new F3();
