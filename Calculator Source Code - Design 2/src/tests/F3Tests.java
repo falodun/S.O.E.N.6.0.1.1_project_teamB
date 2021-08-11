@@ -6,8 +6,8 @@ import model.F3;
 import static constants.Constants.EULER;
 /**
  * 
- * @author Adekunle Falodun
  * Test Case to compare F3's results with that of the Math library
+ * @author Adekunle Falodun
  *
  */
 public class F3Tests {
@@ -84,6 +84,69 @@ public class F3Tests {
         assertEquals(result, sinhWithMathLibrary(-9787));
     }
     
+    /**
+     * Test for a normal floating number
+     */
+    @Test
+    public void normalFloatingNumber() {
+        String result = String.format("%.5f", f3.sinh(12.37382));
+        assertEquals(result, sinhWithMathLibrary(12.37382));
+    }
+    
+    /**
+     * Test for a large floating number
+     */
+    @Test
+    public void largeFloating() {
+        String result = String.format("%.5f", f3.sinh(177728.6));
+        assertEquals(result, sinhWithMathLibrary(177728.6));
+    }
+    
+    /**
+     * Test for a floating number close to zero
+     */
+    @Test
+    public void closeToZero() {
+        String result = String.format("%.5f", f3.sinh(0.000000000000001));
+        assertEquals(result, sinhWithMathLibrary(0.000000000000001));
+    }
+    
+    /**
+     * Test for a floating number close to one
+     */
+    @Test
+    public void closeToOne() {
+        String result = String.format("%.5f", f3.sinh(0.999999999999999));
+        assertEquals(result, sinhWithMathLibrary(0.999999999999999));
+    }
+    
+    /**
+     * Test for a floating number with an extremely long decimal part
+     */
+    @Test
+    public void extremelyLongDecimalPart() {
+        String result = String.format("%.5f", f3.sinh(0.373853666666666664473733844746453673));
+        assertEquals(result, sinhWithMathLibrary(0.373853666666666664473733844746453673));
+    }
+    
+    /**
+     * Test for an extremely large positive input
+     */
+    @Test
+    public void extremelyLargePositiveInput() {
+        String result = String.format("%.5f", f3.sinh(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
+        assertEquals(result, sinhWithMathLibrary(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
+    }
+    
+    /**
+     * Test for an extremely large negative input
+     */
+    @Test
+    public void extremelyLargeNegativeInput() {
+        String result = String.format("%.5f", f3.sinh(-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
+        assertEquals(result, sinhWithMathLibrary(-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
+    }
+    
     
     /**
      * Test for a floating number with a decimal part of only 1 digit
@@ -136,8 +199,8 @@ public class F3Tests {
      */
     @Test
     public void singleDecimal6() {
-        String result = String.format("%.5f", f3.sinh(177728.5));
-        assertEquals(result, sinhWithMathLibrary(177728.5));
+        String result = String.format("%.5f", f3.sinh(0.6));
+        assertEquals(result, sinhWithMathLibrary(0.6));
     }
     
     /**
@@ -148,7 +211,6 @@ public class F3Tests {
         String result = String.format("%.5f", f3.sinh(0.7));
         assertEquals(result, sinhWithMathLibrary(0.7));
     }
-    
     
     /**
      * Test for a floating number with a decimal part of only 1 digit
@@ -168,59 +230,4 @@ public class F3Tests {
         assertEquals(result, sinhWithMathLibrary(0.9));
     }
     
-    /**
-     * Test for a floating number close to zero
-     */
-    @Test
-    public void closeToZero() {
-        String result = String.format("%.5f", f3.sinh(0.000000000000001));
-        assertEquals(result, sinhWithMathLibrary(0.000000000000001));
-    }
-    
-    /**
-     * Test for a floating number close to one
-     */
-    @Test
-    public void closeToOne() {
-        String result = String.format("%.5f", f3.sinh(0.999999999999999));
-        assertEquals(result, sinhWithMathLibrary(0.999999999999999));
-    }
-    
-    /**
-     * Test for a normal floating number
-     */
-    @Test
-    public void normalFloatingNumber() {
-        String result = String.format("%.5f", f3.sinh(12.37382));
-        assertEquals(result, sinhWithMathLibrary(12.37382));
-    }
-    
-    /**
-     * Test for a floating number with an extremely long decimal part
-     */
-    @Test
-    public void extremelyLongDecimalPart() {
-        String result = String.format("%.5f", f3.sinh(0.373853666666666664473733844746453673));
-        assertEquals(result, sinhWithMathLibrary(0.373853666666666664473733844746453673));
-    }
-    
-    /**
-     * Test for an extremely large positive input
-     */
-    @Test
-    public void extremelyLargePositiveInput() {
-        String result = String.format("%.5f", f3.sinh(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
-        assertEquals(result, sinhWithMathLibrary(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
-    }
-    
-    /**
-     * Test for an extremely large negative input
-     */
-    @Test
-    public void extremelyLargeNegativeInput() {
-        String result = String.format("%.5f", f3.sinh(-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
-        assertEquals(result, sinhWithMathLibrary(-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.37));
-    }
-    
-   
 }

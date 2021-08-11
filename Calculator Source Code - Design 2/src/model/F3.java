@@ -54,9 +54,8 @@ public class F3 extends AbstractFunction {
 
         double remainingWholes = (long) exponent;
         double remainingDecimals = modulus(exponent, 1, 14);
-        double baseRaisedToNextTenthExponent = base;
         
-        result *= raise(baseRaisedToNextTenthExponent, remainingWholes);
+        result *= raise(base, remainingWholes);
         
         if (result == Double.POSITIVE_INFINITY) {
     		return isNegativeExponent ? 1.0/result : result;
@@ -84,10 +83,10 @@ public class F3 extends AbstractFunction {
         }
 
         for (double i = 1; i <= exponent; i++) {
+        	result *= base;
         	if (result == Double.POSITIVE_INFINITY) {
         		return result;
         	}
-        	result *= base;
         }
         
 
@@ -132,7 +131,6 @@ public class F3 extends AbstractFunction {
     }
 
     private double modulus(double number, double divisor, long decimalPlace) {
-        
     	double wholePart = (long) (number/divisor);
         double confirmedGuess = 0;
         double precision = 1/(raise(10, decimalPlace));
