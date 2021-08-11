@@ -16,9 +16,13 @@ public class F3 extends AbstractFunction {
     public String functionName = "sinh(x)";
     
     /**
-     * double variable functionName
+     * double variable input
      */
     double input = 0;
+    
+    /**
+     * double variable result
+     */
     double result = 0;
 
     /**
@@ -51,11 +55,22 @@ public class F3 extends AbstractFunction {
         result = sinh(input);
     }
 
+    /**
+     * Method sinh, computes the sinh of a variable
+     * @param x  variable for sinh
+     * @return double
+     */
     public double sinh(double x) {
         double eulerRaisedToX = raiseBaseToExponent(EULER, x);
         return (eulerRaisedToX-(1/eulerRaisedToX))/2;
     }
 
+    /**
+     * Method raiseBaseToExponent, raises a base number to an exponent
+     * @param base   stores value for base
+     * @param exponent   stores value for exponent
+     * @return double
+     */
     public double raiseBaseToExponent(double base, double exponent) {
         double result = 1;
         boolean isNegativeExponent = false;
@@ -88,15 +103,24 @@ public class F3 extends AbstractFunction {
         long lengthOfDecimalPartProcessed = 100;
 
         for (long i = 1; i <= lengthOfDecimalPartProcessed; i++) {
+        	//the decimal part of the exponent is a root of the base
+        	//and can be processed one digit at a time.
             nextDecimal = (long) (remainingDecimals/0.1);
             remainingDecimals = modulus(remainingDecimals, 0.1, 14)*10;
-            baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);
+            //the root of a decimal digit is the tenth-root of the root of the next decimal digit on its left
+            baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);//tenth root
             result *= raise(baseRootedToNextTenthRoot, nextDecimal);
         }
 
         return isNegativeExponent ? 1.0/result : result;
     }
 
+    /**
+     * Method raise, raises a base number to an exponent
+     * @param base   stores value for base
+     * @param exponent   stores value for exponent
+     * @return double
+     */
     private double raise(double base, double exponent) {
         double result = 1;
 
@@ -115,6 +139,12 @@ public class F3 extends AbstractFunction {
         return result;
     }
 
+    /**
+     * Method nthRoot, does the nth-root of number
+     * @param number stores the number whose nth-root is to be calculated
+     * @param n   stores a number that specifies the root
+     * @return double
+     */
     private double nthRoot(double number, long n) {
         double confirmedGuess = 0;
 
@@ -152,6 +182,13 @@ public class F3 extends AbstractFunction {
         return confirmedGuess;
     }
 
+    /**
+     * Method modulus, returns the remainder of a division
+     * @param number stores the number to be divided
+     * @param divisor   stores the divisor
+     * @param decimalPlace   stores the number of decimal places to be used for the result
+     * @return double
+     */
     private double modulus(double number, double divisor, long decimalPlace) {
     	double wholePart = (long) (number/divisor);
         double confirmedGuess = 0;
