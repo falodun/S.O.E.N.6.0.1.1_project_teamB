@@ -4,29 +4,51 @@ import view.FunctionResultView;
 import view.ReturnedInput;
 import static constants.Constants.EULER;
 
+/**
+ * Class F3 implements the sinh(x) function
+ * @author Adekunle Falodun
+ */
 public class F3 extends AbstractFunction {
+	
+	/**
+     * String variable functionName
+     */
     public String functionName = "sinh(x)";
-    double x = 0;
+    
+    /**
+     * double variable functionName
+     */
+    double input = 0;
     double result = 0;
 
+    /**
+     * Concrete Method getInputs gets user inputs
+     * @return ReturnedInput
+     */
     @Override
     public ReturnedInput getInputs() {
         String inputMessage = "Enter value for: x";
         ReturnedInput returnedInput = new FunctionInputField().getDoubleInput(functionName, inputMessage);
-        x = returnedInput.input;
+        input = returnedInput.input;
         return returnedInput;
     }
 
+    /**
+     * Concrete Method displayResult displays result
+     */
     @Override
     public void displayResult() {
         String input = "INPUT:" +
-                "\nx = " + x + "\n\n";
+                "\nx = " + this.input + "\n\n";
         new FunctionResultView().showResult(functionName, input, String.format("%.5f", result));
     }
 
+    /**
+     * Concrete Method calculateResult calculates result
+     */
     @Override
     public void calculateResult() {
-        result = sinh(x);
+        result = sinh(input);
     }
 
     public double sinh(double x) {

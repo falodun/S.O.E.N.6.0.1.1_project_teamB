@@ -21,16 +21,19 @@ public abstract class AbstractFunction {
     }
     
     /**
-     * Abstract Method getInputs gets user inputs
+     * Abstract Method getInputs, to get user inputs
      * @return ReturnedInput
      */
     public abstract ReturnedInput getInputs();
     
     /**
-     * Abstract Method getInputs gets user inputs
+     * Abstract Method calculateResult, to calculate result
      */
     public abstract void calculateResult();
 
+    /**
+     * Abstract Method displayResult, to display result
+     */
     public abstract void displayResult();
 
 }
