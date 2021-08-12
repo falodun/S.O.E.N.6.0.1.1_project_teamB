@@ -154,11 +154,10 @@ public class F3 extends AbstractFunction {
 
         double precision = 0.000000000000001;
         double guess;
-        boolean endLoop = false;
         long index = 0;
 
-        while (!endLoop) {
-            guess = precision*raise(10, index);
+        while (true) {
+            guess = precision*raise(10, index);//minimum guess when index is 0
             double raisedGuess = raise(guess + confirmedGuess, n);
 
             if (raisedGuess < number) {
@@ -167,11 +166,11 @@ public class F3 extends AbstractFunction {
             }
             else if (raisedGuess == number) {
                 confirmedGuess += guess;
-                endLoop = true;
+                break;
             }
             else {
                 if (index == 0) {
-                    endLoop = true;
+                    break;
                 }
                 else {
                     index = 0;
@@ -194,11 +193,10 @@ public class F3 extends AbstractFunction {
         double confirmedGuess = 0;
         double precision = 1/(raise(10, decimalPlace));
         double guess;
-        boolean endLoop = false;
         long index = 0;
 
-        while (!endLoop) {
-            guess = precision*raise(10, index);
+        while (true) {
+            guess = precision*raise(10, index);//minimum guess when index is 0
             double combinedGuess = guess + confirmedGuess + (wholePart*divisor);
 
             if (combinedGuess < number) {
@@ -207,11 +205,11 @@ public class F3 extends AbstractFunction {
             }
             else if (combinedGuess == number) {
                 confirmedGuess += guess;
-                endLoop = true;
+                break;
             }
             else {
                 if (index == 0) {
-                    endLoop = true;
+                    break;
                 }
                 else {
                     index = 0;
