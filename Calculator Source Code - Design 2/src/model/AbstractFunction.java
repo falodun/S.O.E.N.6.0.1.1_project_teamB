@@ -12,8 +12,8 @@ public abstract class AbstractFunction {
      * Method runFunction runs the general steps of using a function
      */
     public final void runFunction() {
-        ReturnedInput returnInput = getInputs();
-        if (returnInput.inputWasMade) {
+        ReturnedInput returnedInput = getInputs();
+        if (returnedInput.inputWasMade) {
             calculateResult();
             displayResult();
         }
