@@ -92,7 +92,7 @@ public class F3 extends AbstractFunction {
         double remainingWholes = (long) exponent;
         double remainingDecimals = modulus(exponent, 1, 14);
         
-        result *= raise(base, remainingWholes);
+        result *= multiplyBaseByItselfNTimes(base, remainingWholes);
         
         if (result == Double.POSITIVE_INFINITY) {
     		return isNegativeExponent ? 1.0/result : result;
@@ -109,26 +109,26 @@ public class F3 extends AbstractFunction {
             remainingDecimals = modulus(remainingDecimals, 0.1, 14)*10;
             //the root for a decimal digit is the tenth-root for the root for the next decimal digit on its left
             baseRootedToNextTenthRoot = nthRoot(baseRootedToNextTenthRoot, 10);//tenth root
-            result *= raise(baseRootedToNextTenthRoot, nextDecimal);
+            result *= multiplyBaseByItselfNTimes(baseRootedToNextTenthRoot, nextDecimal);
         }
 
         return isNegativeExponent ? 1.0/result : result;
     }
 
     /**
-     * Method raise, raises a base number to an exponent
+     * Method multiplyBaseByItselfNTimes, multiplies a base number by itself n times
      * @param base   stores value for base
-     * @param exponent   stores value for exponent
+     * @param n   stores value for n
      * @return double
      */
-    private double raise(double base, double exponent) {
+    private double multiplyBaseByItselfNTimes(double base, double n) {
         double result = 1;
 
-        if (exponent == 0 || base == 1) {
+        if (n == 0 || base == 1) {
             return 1;
         }
 
-        for (double i = 1; i <= exponent; i++) {
+        for (double i = 1; i <= n; i++) {
         	result *= base;
         	if (result == Double.POSITIVE_INFINITY) {
         		return result;
@@ -157,8 +157,8 @@ public class F3 extends AbstractFunction {
         long index = 0;
 
         while (true) {
-            guess = precision*raise(10, index);//minimum guess when index is 0
-            double raisedGuess = raise(guess + confirmedGuess, n);
+            guess = precision* multiplyBaseByItselfNTimes(10, index);//minimum guess when index is 0
+            double raisedGuess = multiplyBaseByItselfNTimes(guess + confirmedGuess, n);
 
             if (raisedGuess < number) {
             	confirmedGuess += guess;
@@ -191,12 +191,12 @@ public class F3 extends AbstractFunction {
     private double modulus(double number, double divisor, long decimalPlace) {
     	double wholePart = (long) (number/divisor);
         double confirmedGuess = 0;
-        double precision = 1/(raise(10, decimalPlace));
+        double precision = 1/(multiplyBaseByItselfNTimes(10, decimalPlace));
         double guess;
         long index = 0;
 
         while (true) {
-            guess = precision*raise(10, index);//minimum guess when index is 0
+            guess = precision* multiplyBaseByItselfNTimes(10, index);//minimum guess when index is 0
             double combinedGuess = guess + confirmedGuess + (wholePart*divisor);
 
             if (combinedGuess < number) {
