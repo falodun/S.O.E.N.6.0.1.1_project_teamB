@@ -110,7 +110,7 @@ public class F7Tests {
 		
 		f7.calculateResult();
 		assertEquals(1.0, f7.result, 0.0);
-		
+	
 	}
 	
 }
