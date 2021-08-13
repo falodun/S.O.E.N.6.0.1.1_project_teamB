@@ -16,7 +16,7 @@ public class F1 extends AbstractFunction {
 	double x = 0;
 	int option = 0;
 	double result = 0;
-	final static double pi = 3.14159;
+	public final static double pi = 3.14159;
 	final static double root3 = getSquareRoot(3.0);
 
 	/**
@@ -65,7 +65,7 @@ public class F1 extends AbstractFunction {
 	 */
 	public double arcCosX(double x) {
 
-		if (x > 1 || x < -1) {
+		if (x < -1 || x > 1) {
 			return Double.NaN;
 		}
 		double temp = getSquareRoot(1 - (x * x)) / x; // arcsin(x) = arctan(sqrt(1-(x*x)/x)
@@ -104,11 +104,11 @@ public class F1 extends AbstractFunction {
 		}
 		if (x > 1) {
 			x = (pi / 2) - arcTanx(1 / x); // Use complementary angle
-		} else if (x > 2 - root3) {
+		}else if (x > 2 - root3) {
 			x = pi / 6 + arcTanx((root3 * x - 1) / (root3 + x)); // Use an identity
 		} else {
 			x = x - (x * x * x) / 3 + (x * x * x * x * x) / 5; // Use the Polynomial
-		}
-		return isXNegative ? x * -1 : x;
+	}
+	return isXNegative ? x * -1 : x;
 	}
 }
