@@ -18,12 +18,12 @@ public class F3 extends AbstractFunction {
     /**
      * double variable input
      */
-    double input = 0;
+    private double input = 0;
     
     /**
      * double variable result
      */
-    double result = 0;
+    private double result = 0;
 
     /**
      * Concrete Method getInputs gets user inputs

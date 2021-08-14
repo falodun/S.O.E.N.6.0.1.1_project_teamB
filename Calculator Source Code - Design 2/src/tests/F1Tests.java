@@ -16,7 +16,7 @@ import model.F1;
 public class F1Tests {
 
 	F1 f1 = new F1();
-	/*
+	/**
 	 * R04 - Finding square root
 	 */
 	@Test
@@ -25,7 +25,7 @@ public class F1Tests {
 		assertEquals(String.valueOf(F1.getSquareRoot(x)), String.valueOf(0.15811388300841897));
 	}
 
-	/*
+	/**
 	 * R05 - Reducing value of X to the equivalent arc-tangent value
 	 */
 	@Test
@@ -34,7 +34,7 @@ public class F1Tests {
 		assertEquals(String.valueOf(f1.arcCosX(x)), String.valueOf(0.40271534418895777));
 	}
 
-	/*
+	/**
 	 * R03 - Input not in the range -1 and 1, then returns NaN(in-valid Input)
 	 */
 	@Test
@@ -43,7 +43,7 @@ public class F1Tests {
 		assertEquals(String.valueOf(f1.arcCosX(x)), String.valueOf("NaN"));
 	}
 
-	/*
+	/**
 	 * R06 -Arc Tangent Value of X
 	 */
 	@Test
@@ -52,7 +52,7 @@ public class F1Tests {
 		assertEquals(String.valueOf(f1.arcTanx(x)), String.valueOf("0.7854111405631049"));
 	}
 
-	/*
+	/**
 	 * R03 - Input in the range -1 and 1 and does not return NaN(Valid Input)
 	 */
 	@Test
@@ -61,7 +61,7 @@ public class F1Tests {
 		assertNotEquals(String.valueOf(f1.arcCosX(x)), String.valueOf("NaN"));
 	}
 
-	/*
+	/**
 	 * R07 - Convert radians to degrees
 	 */
 	@Test
@@ -72,14 +72,15 @@ public class F1Tests {
 
 
 	/**
-	 *  R03 - Input in the range -1 and 1
+	 *  R03 - Input in the range -1 and 1 and negative input
 	 */
 	@Test
 	public void testNegativevalueinDomain() {
 		double x = -0.83658;
-		System.out.println(String.valueOf(f1.arcTanx(x)));
-		assertEquals(String.valueOf(f1.arcTanx(x)), String.valueOf("-0.6966515384834499"));
+		assertEquals(String.valueOf(f1.arcTanx(x)), String.valueOf(-0.6966515384834499));
 	}
+	
+
 
 }
 	
