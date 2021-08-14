@@ -13,9 +13,9 @@ import view.ReturnedInput;
 
 public class F7 extends AbstractFunction {
     public String functionName = "x^y";
-    double x = 0;
-    double y = 0;
-    double result = 1;
+    public double x = 0;
+    public double y = 0;
+    public double result = 1;
 
 	/**
 	 * Get inputs from user through UI
